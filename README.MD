@@ -1,0 +1,1 @@
+# Dungeon Master screen (Prototype) - Notes management and rules for game masters playing 5th edition of TTRPG Dungeons & Dragons. 
