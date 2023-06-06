@@ -1,6 +1,11 @@
+import PrimarySearchAppBar from "./components/header/AppBar";
+
 function App() {
     return (
-        <h1>DM SCREEN v0.1</h1>
+        <>
+            <PrimarySearchAppBar />
+            <h1>DM SCREEN v0.1</h1>
+        </>
     );
 }
 

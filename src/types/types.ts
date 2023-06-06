@@ -1,8 +1,8 @@
 export type NewSession = {
     name: string;
     notes: string;
-    creationDate: string;
-    plannedDate: string;
+    creationDate: Date;
+    plannedDate: Date;
 }
 
 export interface Session extends NewSession {
