@@ -1,4 +1,4 @@
-import PrimarySearchAppBar from "./components/header/AppBar";
+import PrimarySearchAppBar from "./components/header/PrimarySearchAppBar";
 
 function App() {
     return (
