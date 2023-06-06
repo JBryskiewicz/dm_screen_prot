@@ -1,15 +1,16 @@
 import PrimarySearchAppBar from "./components/header/PrimarySearchAppBar";
 import LeftNavigation from "./components/leftMenu/LeftNavigation";
+import MainBody from "./components/MainBody";
+import Box from "@mui/material/Box";
 
 function App() {
     return (
         <>
             <PrimarySearchAppBar/>
-            {/*use MUI's grid tags*/}
-            <section style={{display: 'flex'}}>
+            <Box style={{display: 'flex', backgroundColor: '#121212'}}>
                 <LeftNavigation/>
-                <h1>DM SCREEN v0.1</h1>
-            </section>
+                <MainBody />
+            </Box>
         </>
     );
 }
