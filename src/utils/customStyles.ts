@@ -1,6 +1,7 @@
 /** Custom colors for styling separate from those declared in MUI - section */
 export const customPrimaryColor = "#1F1B24";
 export const customSecondaryColor = "#232029";
+export const customTetraryColor = "#282534";
 export const inactiveText = 'grey';
 export const activeText = 'white';
 
