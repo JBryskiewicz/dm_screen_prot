@@ -35,3 +35,16 @@ export const MainBodyBoxStyle = {
     backgroundColor: customPrimaryColor,
     margin: '10px'
 }
+
+/** Latest sessions section (quick access) */
+
+export const latestSessionsStyle = {
+    maxHeight: 'calc(100vh - 84px)',
+    width: '18vw',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    backgroundColor: customPrimaryColor,
+    margin: '10px 10px 10px 0',
+    paddingTop: '10px'
+}
