@@ -25,3 +25,13 @@ export const navigationLinkStyle = {
 
 /** Main Container (welcome screen) */
 
+export const MainBodyBoxStyle = {
+    maxHeight: 'calc(100vh - 84px)',
+    width: '72vw',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: activeText,
+    backgroundColor: customPrimaryColor,
+    margin: '10px'
+}
