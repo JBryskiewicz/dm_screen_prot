@@ -37,7 +37,7 @@ function SessionQuickAccessCard({session}: Props) {
                     Planned: {demoDate}
                 </Typography>
                 <Typography variant="body2" sx={{color: inactiveText, marginTop: '12px'}}>
-                    {demoNotes}
+                    {demoNotes}...
                 </Typography>
             </CardContent>
             <CardActions sx={{display: 'flex', justifyContent: 'space-around'}}>

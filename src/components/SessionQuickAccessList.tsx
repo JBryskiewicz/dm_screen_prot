@@ -9,7 +9,12 @@ function SessionQuickAccessList() {
     const [sessions, setSessions] = useState<Session[]>([]);
 
     useEffect(() => {
-        getSessions().then(data => setSessions(data));
+        getSessions().then(data => {
+            const sortedSessions = data.sort((a, b) =>
+                new Date(b.plannedDate).getTime() - new Date(a.plannedDate).getTime()
+            );
+            setSessions(sortedSessions);
+        });
     }, []);
 
     async function getSessions(): Promise<Session[]> {
