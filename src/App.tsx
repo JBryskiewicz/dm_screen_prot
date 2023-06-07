@@ -1,7 +1,7 @@
 import PrimarySearchAppBar from "./components/header/PrimarySearchAppBar";
 import LeftNavigation from "./components/leftMenu/LeftNavigation";
-import MainBody from "./components/MainBody";
 import Box from "@mui/material/Box";
+import {Outlet} from "react-router-dom";
 
 function App() {
     return (
@@ -9,7 +9,7 @@ function App() {
             <PrimarySearchAppBar/>
             <Box style={{display: 'flex', backgroundColor: '#121212'}}>
                 <LeftNavigation/>
-                <MainBody />
+                <Outlet />
             </Box>
         </>
     );

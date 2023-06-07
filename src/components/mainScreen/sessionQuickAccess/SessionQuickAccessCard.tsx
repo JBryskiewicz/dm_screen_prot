@@ -1,7 +1,8 @@
-import {activeText, customTetraryColor, inactiveText} from "../utils/customStyles";
+import {activeText, inactiveText, secondaryActiveText} from "../../../utils/customStyles";
 import {Button, Card, CardActions, CardContent} from "@mui/material";
 import Typography from "@mui/material/Typography";
-import {Session} from "../types/types";
+import {Session} from "../../../types/types";
+import {latestSessionCardStyles} from "../mainScreenStyles";
 
 type Props = {
     session: Session
@@ -21,21 +22,12 @@ function SessionQuickAccessCard({session}: Props) {
         .at(0);
 
     return (
-        <Card sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-            maxWidth: 290,
-            width: '18vw',
-            height: '220px',
-            backgroundColor: customTetraryColor,
-            marginBottom: '20px'
-        }}>
+        <Card sx={latestSessionCardStyles}>
             <CardContent>
                 <Typography sx={{fontSize: 16, color: activeText}} color="text.secondary" gutterBottom>
                     {session.name}
                 </Typography>
-                <Typography sx={{fontSize: 14, color: activeText}} color="text.secondary" gutterBottom>
+                <Typography sx={{fontSize: 14, color: secondaryActiveText}} color="text.secondary" gutterBottom>
                     Planned: {demoDate}
                 </Typography>
                 <Typography variant="body2" sx={{maxHeight: '80px',color: inactiveText, marginTop: '12px'}}>

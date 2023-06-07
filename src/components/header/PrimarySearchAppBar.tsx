@@ -10,8 +10,9 @@ import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import {customPrimaryColor, headerIconStyling} from "../../utils/customStyles";
+import {customPrimaryColor} from "../../utils/customStyles";
 import {Search, SearchIconWrapper, StyledInputBase} from "./SearchBar";
+import {headerIconStyling} from "./headerStyles";
 
 export default function PrimarySearchAppBar() {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);

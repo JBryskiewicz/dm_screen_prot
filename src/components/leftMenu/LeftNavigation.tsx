@@ -9,12 +9,11 @@ import {
     activeText,
     customPrimaryColor,
     customSecondaryColor,
-    inactiveText, navigationLinkStyle,
-    navigationWidth
+    inactiveText
 } from "../../utils/customStyles";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import {Link} from "@mui/material";
-
+import {navigationAccordion, navigationBody, navigationLinkStyle} from "./leftNavigationStyles";
 
 const BUILD_VERSION = 'version 0.0.1'
 
@@ -55,9 +54,8 @@ const AccordionDetails = styled(MuiAccordionDetails)(() => ({
     flexDirection: 'column',
     rowGap: '0.125rem',
     paddingBottom: '8px',
-    paddingLeft: '3rem',
+    paddingLeft: '3rem'
 }));
-
 
 export default function LeftNavigation() {
     const [expanded, setExpanded] = React.useState<string | false>('panel1');
@@ -69,27 +67,15 @@ export default function LeftNavigation() {
         };
 
     return (
-        <Box sx={{
-            height: 'calc(100vh - 64px)',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-            backgroundColor: customPrimaryColor,
-        }}>
-            <Box sx={{
-                color: inactiveText,
-                width: navigationWidth,
-                boxSizing: 'border-box',
-                overflow: 'hidden',
-                paddingTop: '1.25rem'
-            }}>
+        <Box sx={navigationBody}>
+            <Box sx={navigationAccordion}>
                 <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                     <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-                        <Typography>Your Creations</Typography>
+                        <Typography>My Creations</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <Link href={'#'} sx={navigationLinkStyle}>{'Main Screen'}</Link>
-                        <Link href={'#'} sx={navigationLinkStyle}>{'My sessions'}</Link>
+                        <Link href={'/'} sx={navigationLinkStyle}>{'Main Screen'}</Link>
+                        <Link href={'/my-sessions'} sx={navigationLinkStyle}>{'My sessions'}</Link>
                     </AccordionDetails>
                 </Accordion>
                 <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
@@ -110,14 +96,8 @@ export default function LeftNavigation() {
                     </AccordionDetails>
                 </Accordion>
             </Box>
-            <Box sx={{
-                display: 'flex',
-                justifyContent: 'center'
-            }}>
-                <Typography sx={{
-                    color: inactiveText,
-                    marginBottom: '0.375rem'
-                }}>
+            <Box sx={{display: 'flex', justifyContent: 'center'}}>
+                <Typography sx={{color: inactiveText, marginBottom: '0.375rem'}}>
                     {BUILD_VERSION}
                 </Typography>
             </Box>

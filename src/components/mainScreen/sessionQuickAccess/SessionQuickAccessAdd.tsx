@@ -1,39 +1,14 @@
-import {activeText, customTetraryColor, inactiveText} from "../utils/customStyles";
 import {Button, TextField} from "@mui/material";
 import Box from "@mui/material/Box";
 import {styled} from "@mui/material/styles";
 import {Formik, FormikHelpers} from "formik";
 import axios from "axios";
-import {API_URL} from "../utils/constants";
-import {NewSession} from "../types/types";
+import {API_URL} from "../../../utils/constants";
+import {NewSession} from "../../../types/types";
 import {Dispatch, SetStateAction} from "react";
+import {latestSessionsFormStyles, latestSessionsNewButton, latestSessionsTextField} from "../mainScreenStyles";
 
-const CssTextField = styled(TextField)({
-    backgroundColor: customTetraryColor,
-    '& label': {
-        color: inactiveText
-    },
-    '& .MuiInputBase-input': {
-        color: activeText,
-    },
-    '& label.Mui-focused': {
-        color: activeText,
-    },
-    '& .MuiInput-underline:after': {
-        borderBottomColor: '#B2BAC2',
-    },
-    '& .MuiOutlinedInput-root': {
-        '& fieldset': {
-            borderColor: inactiveText,
-        },
-        '&:hover fieldset': {
-            borderColor: activeText,
-        },
-        '&.Mui-focused fieldset': {
-            borderColor: activeText,
-        },
-    },
-});
+const CssTextField = styled(TextField)(latestSessionsTextField);
 
 type Props = {
     setCheck: Dispatch<SetStateAction<number>>
@@ -60,6 +35,7 @@ function SessionQuickAccessAdd({setCheck}: Props) {
         await postSession(newSession);
         await setSubmitting(false);
         await setCheck(prevState => prevState === 0 ? 1 : 0);
+        value.sessionName = '';
     }
 
     return (
@@ -74,7 +50,7 @@ function SessionQuickAccessAdd({setCheck}: Props) {
                     ({ values, handleSubmit, handleChange, isSubmitting }) => (
                         <form
                             onSubmit={handleSubmit}
-                            style={{display: 'flex', columnGap: '8px', alignItems: 'center', justifyContent: 'center'}}
+                            style={latestSessionsFormStyles}
                         >
                             <CssTextField
                                 required
@@ -87,16 +63,7 @@ function SessionQuickAccessAdd({setCheck}: Props) {
                             <Button
                                 type="submit"
                                 disabled={isSubmitting}
-                                sx={{
-                                    fontSize: '1rem',
-                                    color: inactiveText,
-                                    border: `1px solid ${inactiveText}`,
-                                    backgroundColor: customTetraryColor,
-                                    '&:hover': {
-                                        color: activeText,
-                                        borderColor: activeText
-                                    }
-                                }}>
+                                sx={latestSessionsNewButton}>
                                 add
                             </Button>
                         </form>
