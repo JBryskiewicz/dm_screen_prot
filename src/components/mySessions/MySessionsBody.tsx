@@ -32,7 +32,7 @@ function MySessionsBody() {
                 <MySessionsButtons />
                 <MySessionsList sessions={sessions}/>
             </Box>
-            <MySessionsStatistics />
+            <MySessionsStatistics sessions={sessions}/>
         </>
     );
 }
