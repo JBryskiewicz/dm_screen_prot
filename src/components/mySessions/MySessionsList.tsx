@@ -14,7 +14,13 @@ function MySessionsList({sessions, setCheck}: Props) {
         <Container sx={mySessionsListContainer}>
             <Grid container spacing={4} rowSpacing={1}>
                     {sessions
-                        .map((session) => <MySessionsSessionCard key={session.id} session={session} setCheck={setCheck}/>)}
+                        .map((session) => (
+                            <MySessionsSessionCard
+                            key={session.id}
+                            session={session}
+                            setCheck={setCheck}
+                            />
+                        ))}
             </Grid>
         </Container>
     );

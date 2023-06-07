@@ -4,36 +4,20 @@ import MySessionsStatistics from "./MySessionsStatistics";
 import MySessionsList from "./MySessionsList";
 import {useEffect, useState} from "react";
 import {Session} from "../../types/types";
-import {API_URL} from "../../utils/constants";
-import axios from "axios";
 import {SessionsBodyBoxStyle} from "./mySessionsStyles";
+import {sortAndSetSessions} from "../../utils/supportFunctions";
 
 function MySessionsBody() {
     const [sessions, setSessions] = useState<Session[]>([]);
     const [check, setCheck] = useState<number>(0);
 
     useEffect(() => {
-        getSessions().then(data => {
-            const sortedSessions = data.sort((a, b) =>
-                new Date(b.creationDate).getTime() - new Date(a.creationDate).getTime()
-            );
-            setSessions(sortedSessions);
-        });
+        sortAndSetSessions(setSessions);
     }, []);
 
     useEffect(() => {
-        getSessions().then(data => {
-            const sortedSessions = data.sort((a, b) =>
-                new Date(b.creationDate).getTime() - new Date(a.creationDate).getTime()
-            );
-            setSessions(sortedSessions);
-        });
+        sortAndSetSessions(setSessions);
     }, [check]);
-
-    async function getSessions(): Promise<Session[]> {
-        const response = await axios.get(API_URL);
-        return await response.data;
-    }
 
     return (
         <>
