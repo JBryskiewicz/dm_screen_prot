@@ -2,11 +2,11 @@ import Box from "@mui/material/Box";
 import SessionQuickAccessCard from "./SessionQuickAccessCard";
 import axios from "axios";
 import {useEffect, useState} from "react";
-import {Session} from "../types/types";
-import {API_URL} from "../utils/constants";
+import {Session} from "../../../types/types";
+import {API_URL} from "../../../utils/constants";
 import SessionQuickAccessAdd from "./SessionQuickAccessAdd";
 import Typography from "@mui/material/Typography";
-import {inactiveText} from "../utils/customStyles";
+import {inactiveText} from "../../../utils/customStyles";
 
 function SessionQuickAccessList() {
     const [sessions, setSessions] = useState<Session[]>([]);

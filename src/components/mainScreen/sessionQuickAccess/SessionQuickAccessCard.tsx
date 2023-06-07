@@ -1,7 +1,7 @@
-import {activeText, customTetraryColor, inactiveText} from "../utils/customStyles";
+import {activeText, customTetraryColor, inactiveText} from "../../../utils/customStyles";
 import {Button, Card, CardActions, CardContent} from "@mui/material";
 import Typography from "@mui/material/Typography";
-import {Session} from "../types/types";
+import {Session} from "../../../types/types";
 
 type Props = {
     session: Session

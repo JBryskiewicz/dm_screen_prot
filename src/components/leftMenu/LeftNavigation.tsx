@@ -85,11 +85,11 @@ export default function LeftNavigation() {
             }}>
                 <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                     <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-                        <Typography>Your Creations</Typography>
+                        <Typography>My Creations</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <Link href={'#'} sx={navigationLinkStyle}>{'Main Screen'}</Link>
-                        <Link href={'#'} sx={navigationLinkStyle}>{'My sessions'}</Link>
+                        <Link href={'/'} sx={navigationLinkStyle}>{'Main Screen'}</Link>
+                        <Link href={'/my-sessions'} sx={navigationLinkStyle}>{'My sessions'}</Link>
                     </AccordionDetails>
                 </Accordion>
                 <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>

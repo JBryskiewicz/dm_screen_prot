@@ -1,11 +1,11 @@
-import {activeText, customTetraryColor, inactiveText} from "../utils/customStyles";
+import {activeText, customTetraryColor, inactiveText} from "../../../utils/customStyles";
 import {Button, TextField} from "@mui/material";
 import Box from "@mui/material/Box";
 import {styled} from "@mui/material/styles";
 import {Formik, FormikHelpers} from "formik";
 import axios from "axios";
-import {API_URL} from "../utils/constants";
-import {NewSession} from "../types/types";
+import {API_URL} from "../../../utils/constants";
+import {NewSession} from "../../../types/types";
 import {Dispatch, SetStateAction} from "react";
 
 const CssTextField = styled(TextField)({
@@ -60,6 +60,7 @@ function SessionQuickAccessAdd({setCheck}: Props) {
         await postSession(newSession);
         await setSubmitting(false);
         await setCheck(prevState => prevState === 0 ? 1 : 0);
+        value.sessionName = '';
     }
 
     return (

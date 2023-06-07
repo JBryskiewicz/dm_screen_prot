@@ -49,3 +49,15 @@ export const latestSessionsStyle = {
     margin: '10px 10px 10px 0',
     paddingTop: '10px'
 }
+
+/** MySessions Container (/my-sessions view) */
+
+export const SessionsBodyBoxStyle = {
+    maxHeight: 'calc(100vh - 84px)',
+    width: '72vw',
+    display: 'flex',
+    flexDirection: 'column',
+    color: activeText,
+    backgroundColor: customPrimaryColor,
+    margin: '10px'
+}
