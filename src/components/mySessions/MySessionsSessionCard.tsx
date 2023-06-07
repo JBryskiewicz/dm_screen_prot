@@ -3,12 +3,16 @@ import {Button, Card, CardActions, CardContent, Grid} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import {Session} from "../../types/types";
 import Box from "@mui/material/Box";
+import axios from "axios";
+import {API_URL} from "../../utils/constants";
+import {Dispatch, SetStateAction} from "react";
 
 type Props = {
     session: Session
+    setCheck: Dispatch<SetStateAction<number>>
 }
 
-function MySessionsSessionCard({session}: Props) {
+function MySessionsSessionCard({session, setCheck}: Props) {
 
     const demoNotes = session.notes
         .split('')
@@ -21,6 +25,15 @@ function MySessionsSessionCard({session}: Props) {
             .slice(0, 19)
             .split('T')
             .at(0);
+    }
+
+    async function handleDeleteButton () {
+        await removeSession(session.id);
+    }
+
+    async function removeSession(id: number) {
+        await axios.delete(`${API_URL}/${id}`);
+        await setCheck(prevState => prevState === 0 ? 1 : 0);
     }
 
     return (
@@ -53,7 +66,7 @@ function MySessionsSessionCard({session}: Props) {
                 <CardActions sx={{display: 'flex', justifyContent: 'space-around'}}>
                     <Button size="small">View</Button>
                     <Button size="small">Edit</Button>
-                    <Button size="small">Remove</Button>
+                    <Button onClick={handleDeleteButton} size="small">Remove</Button>
                 </CardActions>
             </Card>
         </Grid>

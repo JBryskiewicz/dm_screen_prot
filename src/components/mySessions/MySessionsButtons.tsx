@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 function MySessionsButtons() {
     return (
         <Box sx={{ margin: '20px', marginRight: '85px',display: 'flex', justifyContent: 'flex-end'}}>
-            <Link href={'#'}>
+            <Link href={'/new-session'}>
                 <Button
                     sx={{
                         fontSize: '1rem',

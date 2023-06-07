@@ -12,6 +12,7 @@ import axios from "axios";
 
 function MySessionsBody() {
     const [sessions, setSessions] = useState<Session[]>([]);
+    const [check, setCheck] = useState<number>(0);
 
     useEffect(() => {
         getSessions().then(data => {
@@ -21,6 +22,16 @@ function MySessionsBody() {
             setSessions(sortedSessions);
         });
     }, []);
+
+    useEffect(() => {
+        getSessions().then(data => {
+            const sortedSessions = data.sort((a, b) =>
+                new Date(b.creationDate).getTime() - new Date(a.creationDate).getTime()
+            );
+            setSessions(sortedSessions);
+        });
+    }, [check]);
+
     async function getSessions(): Promise<Session[]> {
         const response = await axios.get(API_URL);
         return await response.data;
@@ -30,7 +41,7 @@ function MySessionsBody() {
         <>
             <Box sx={SessionsBodyBoxStyle}>
                 <MySessionsButtons />
-                <MySessionsList sessions={sessions}/>
+                <MySessionsList sessions={sessions} setCheck={setCheck}/>
             </Box>
             <MySessionsStatistics sessions={sessions}/>
         </>
