@@ -1,22 +1,13 @@
 import {Button, Link} from "@mui/material";
-import {activeText, customTetraryColor, inactiveText} from "../../utils/customStyles";
 import Box from "@mui/material/Box";
+import {mySessionsButtonBox, mySessionsNewButton} from "./mySessionsStyles";
 
 function MySessionsButtons() {
     return (
-        <Box sx={{ margin: '20px', marginRight: '85px',display: 'flex', justifyContent: 'flex-end'}}>
+        <Box sx={mySessionsButtonBox}>
             <Link href={'/new-session'}>
                 <Button
-                    sx={{
-                        fontSize: '1rem',
-                        color: inactiveText,
-                        border: `1px solid ${inactiveText}`,
-                        backgroundColor: customTetraryColor,
-                        '&:hover': {
-                            color: activeText,
-                            borderColor: activeText
-                        }
-                    }}>
+                    sx={mySessionsNewButton}>
                     New Session
                 </Button>
             </Link>

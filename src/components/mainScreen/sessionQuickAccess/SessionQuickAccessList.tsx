@@ -6,7 +6,7 @@ import {Session} from "../../../types/types";
 import {API_URL} from "../../../utils/constants";
 import SessionQuickAccessAdd from "./SessionQuickAccessAdd";
 import Typography from "@mui/material/Typography";
-import {inactiveText} from "../../../utils/customStyles";
+import {latestSessionsListHint} from "../mainScreenStyles";
 
 function SessionQuickAccessList() {
     const [sessions, setSessions] = useState<Session[]>([]);
@@ -38,7 +38,7 @@ function SessionQuickAccessList() {
     return (
         <>
             <SessionQuickAccessAdd setCheck={setCheck}/>
-            <Typography sx={{color: inactiveText, padding: '15px 10px', fontSize: '14px'}}>
+            <Typography sx={latestSessionsListHint}>
                 *list below is sorted by creation date (desc)
             </Typography>
             <Box>

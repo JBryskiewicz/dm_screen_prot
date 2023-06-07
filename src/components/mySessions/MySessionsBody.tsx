@@ -1,6 +1,3 @@
-import {
-    SessionsBodyBoxStyle
-} from "../../utils/customStyles";
 import Box from "@mui/material/Box";
 import MySessionsButtons from "./MySessionsButtons";
 import MySessionsStatistics from "./MySessionsStatistics";
@@ -9,6 +6,7 @@ import {useEffect, useState} from "react";
 import {Session} from "../../types/types";
 import {API_URL} from "../../utils/constants";
 import axios from "axios";
+import {SessionsBodyBoxStyle} from "./mySessionsStyles";
 
 function MySessionsBody() {
     const [sessions, setSessions] = useState<Session[]>([]);
