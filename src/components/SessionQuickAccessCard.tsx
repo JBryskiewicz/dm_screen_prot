@@ -10,12 +10,14 @@ type Props = {
 function SessionQuickAccessCard({session}: Props) {
 
     const demoNotes = session.notes
-        .split(' ')
-        .slice(0, 20)
-        .join(' ');
+        .split('')
+        .slice(0, 125)
+        .join('');
 
-    const demoDate = session.plannedDate.toString()
-        .split(' ')
+    const demoDate = session.plannedDate
+        .toString()
+        .slice(0, 19)
+        .split('T')
         .at(0);
 
     return (
@@ -36,13 +38,13 @@ function SessionQuickAccessCard({session}: Props) {
                 <Typography sx={{fontSize: 14, color: activeText}} color="text.secondary" gutterBottom>
                     Planned: {demoDate}
                 </Typography>
-                <Typography variant="body2" sx={{color: inactiveText, marginTop: '12px'}}>
+                <Typography variant="body2" sx={{maxHeight: '80px',color: inactiveText, marginTop: '12px'}}>
                     {demoNotes}...
                 </Typography>
             </CardContent>
             <CardActions sx={{display: 'flex', justifyContent: 'space-around'}}>
+                <Button size="small">Details</Button>
                 <Button size="small">Edit</Button>
-                <Button size="small">Remove</Button>
             </CardActions>
         </Card>
     );
