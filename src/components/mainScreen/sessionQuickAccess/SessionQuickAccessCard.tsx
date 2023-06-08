@@ -1,26 +1,15 @@
-import {activeText, inactiveText, secondaryActiveText} from "../../../utils/customStyles";
+import {activeText, inactiveText, secondaryActiveText} from "../../../utils/customColors";
 import {Button, Card, CardActions, CardContent} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import {Session} from "../../../types/types";
 import {latestSessionCardStyles} from "../mainScreenStyles";
+import {applyDate, applyDemoNotes} from "../../../utils/supportFunctions";
 
 type Props = {
     session: Session
 }
 
 function SessionQuickAccessCard({session}: Props) {
-
-    const demoNotes = session.notes
-        .split('')
-        .slice(0, 125)
-        .join('');
-
-    const demoDate = session.plannedDate
-        .toString()
-        .slice(0, 19)
-        .split('T')
-        .at(0);
-
     return (
         <Card sx={latestSessionCardStyles}>
             <CardContent>
@@ -28,10 +17,10 @@ function SessionQuickAccessCard({session}: Props) {
                     {session.name}
                 </Typography>
                 <Typography sx={{fontSize: 14, color: secondaryActiveText}} color="text.secondary" gutterBottom>
-                    Planned: {demoDate}
+                    {session.plannedDate !== null ? `Planned: ${applyDate(session.plannedDate)}` : `Session is not planned`}
                 </Typography>
-                <Typography variant="body2" sx={{maxHeight: '80px',color: inactiveText, marginTop: '12px'}}>
-                    {demoNotes}...
+                <Typography variant="body2" sx={{maxHeight: '80px', color: inactiveText, marginTop: '12px'}}>
+                    <div dangerouslySetInnerHTML={{__html: applyDemoNotes(session.notes, 125)}}></div>
                 </Typography>
             </CardContent>
             <CardActions sx={{display: 'flex', justifyContent: 'space-around'}}>
