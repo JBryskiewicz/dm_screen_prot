@@ -24,7 +24,7 @@ function SessionQuickAccessAdd({setCheck}: Props) {
             name: value.sessionName,
             notes: "",
             creationDate: new Date(),
-            plannedDate: new Date()
+            plannedDate: null
         }
 
         await postSession(newSession);
