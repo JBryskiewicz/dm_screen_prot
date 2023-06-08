@@ -4,7 +4,7 @@ import {
     customTetraryColor,
     inactiveText,
     secondaryActiveText
-} from "../../utils/customStyles";
+} from "../../utils/customColors";
 
 export const MainBodyBoxStyle = {
     maxHeight: 'calc(100vh - 84px)',
@@ -61,6 +61,7 @@ export const latestSessionsNewButton = {
         borderColor: activeText
     }
 }
+
 export const latestSessionsStyle = {
     maxHeight: 'calc(100vh - 84px)',
     width: '18vw',

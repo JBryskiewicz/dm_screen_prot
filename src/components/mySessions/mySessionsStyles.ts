@@ -4,7 +4,7 @@ import {
     customTetraryColor,
     inactiveText,
     secondaryActiveText
-} from "../../utils/customStyles";
+} from "../../utils/customColors";
 
 export const SessionsBodyBoxStyle = {
     maxHeight: 'calc(100vh - 84px)',
@@ -68,7 +68,7 @@ export const MySessionsNotesDemo = {
 
 export const mySessionsStatisticsLabel = {
     color: activeText,
-    fontSize: '2rem',
+    fontSize: '1.625rem',
     padding: '20px 10px',
     marginTop: '8px',
     backgroundColor: customTetraryColor,

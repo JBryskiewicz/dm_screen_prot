@@ -1,4 +1,4 @@
-import {activeText, inactiveText, secondaryActiveText} from "../../../utils/customStyles";
+import {activeText, inactiveText, secondaryActiveText} from "../../../utils/customColors";
 import {Button, Card, CardActions, CardContent} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import {Session} from "../../../types/types";

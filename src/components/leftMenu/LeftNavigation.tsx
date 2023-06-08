@@ -10,7 +10,7 @@ import {
     customPrimaryColor,
     customSecondaryColor,
     inactiveText
-} from "../../utils/customStyles";
+} from "../../utils/customColors";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import {Link} from "@mui/material";
 import {navigationAccordion, navigationBody, navigationLinkStyle} from "./leftNavigationStyles";
