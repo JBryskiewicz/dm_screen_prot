@@ -2,11 +2,10 @@ import {Button, TextField} from "@mui/material";
 import Box from "@mui/material/Box";
 import {styled} from "@mui/material/styles";
 import {Formik, FormikHelpers} from "formik";
-import axios from "axios";
-import {API_URL} from "../../../utils/constants";
 import {NewSession} from "../../../types/types";
 import {Dispatch, SetStateAction} from "react";
 import {latestSessionsFormStyles, latestSessionsNewButton, latestSessionsTextField} from "../mainScreenStyles";
+import {postSession} from "../../../utils/apiCommunication";
 
 const CssTextField = styled(TextField)(latestSessionsTextField);
 
@@ -19,10 +18,6 @@ type FormValues = {
 }
 
 function SessionQuickAccessAdd({setCheck}: Props) {
-
-    async function postSession(data: NewSession) {
-        await axios.post(API_URL, data);
-    }
 
     async function handleSubmit(value: FormValues, {setSubmitting}: FormikHelpers<FormValues>) {
         const newSession: NewSession = {

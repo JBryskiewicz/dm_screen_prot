@@ -1,6 +1,6 @@
 import {
     activeText,
-    customPrimaryColor, customSecondaryColor,
+    customPrimaryColor,
     customTetraryColor,
     inactiveText,
     secondaryActiveText
@@ -15,7 +15,7 @@ export const newSessionBodyBox = {
     color: activeText,
     backgroundColor: customPrimaryColor,
     margin: '10px',
-    padding: '20px'
+    padding: '50px 20px'
 }
 
 export const newSessionUpperBox = {
@@ -54,8 +54,24 @@ export const newSessionsNameField = {
 
 export const newSessionQuill = {
     width: '80vw',
-    height: '440px',
+    height: '540px',
     color: secondaryActiveText,
-    backgroundColor: customSecondaryColor,
     marginTop: '20px'
+}
+
+export const newSessionDatePickerBox = {
+    width: '80vw',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    marginTop: '60px'
+}
+
+export const newSessionDatePickerBody = {
+    width: '20%',
+    minWidth: '300px',
+    backgroundColor: customTetraryColor,
+    border: `1px solid ${secondaryActiveText}`,
+    borderRadius: '4px',
+    marginTop: '10px'
 }
