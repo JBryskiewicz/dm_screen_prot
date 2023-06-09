@@ -7,11 +7,14 @@ import NewSessionDatePlanner from "./NewSessionDatePlanner";
 import {NewSession} from "../../types/types";
 import NewSessionNameSection from "./NewSessionNameSection";
 import {postSession} from "../../utils/apiCommunication";
+import {useNavigate} from "react-router-dom";
 
 function NewSessionBody() {
     const [sessionName, setSessionName] = useState<string>('');
     const [notes, setNotes] = useState<string>('');
     const [plannedDate, setPlannedDate] = useState<Date | null>(null);
+
+    const navigate = useNavigate();
 
     async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
@@ -24,6 +27,7 @@ function NewSessionBody() {
         }
 
         await postSession(newSession);
+        navigate('/my-sessions');
     }
 
     return (

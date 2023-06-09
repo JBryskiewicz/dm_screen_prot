@@ -3,6 +3,7 @@ import App from "../App";
 import MainBody from "../components/mainScreen/MainBody";
 import MySessionsBody from "../components/mySessions/MySessionsBody";
 import NewSessionBody from "../components/newSession/NewSessionBody";
+import SessionDetailsBody from "../components/sessionDetails/SessionDetailsBody";
 
 export const router = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
             {
                 path: "new-session",
                 element: <NewSessionBody />
+            },
+            {
+                path: "session-details/:id",
+                element: <SessionDetailsBody />
             }
         ]
     },
