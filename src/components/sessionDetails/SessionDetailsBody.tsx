@@ -16,6 +16,7 @@ import {applyDate, handleOnClick} from "../../utils/supportFunctions";
 import {secondaryActiveText} from "../../utils/customColors";
 import Typography from "@mui/material/Typography";
 import EditSessionName from "./editSessionDetails/EditSessionName";
+import EditSessionNotes from "./editSessionDetails/EditSessionNotes";
 
 type RouteParams = {
     id: string;
@@ -72,8 +73,8 @@ function SessionDetailsBody() {
                     <Box sx={sessionDetailsNotesBox}>
                         <div dangerouslySetInnerHTML={{__html: session.notes}}/>
                     </Box>
-                </div>
-                : <div onClick={() => handleOnClick(1, isEditable, setIsEditable)}>test</div>
+                  </div>
+                : <EditSessionNotes isEditable={isEditable} setIsEditable={setIsEditable} session={session} setCheck={setCheck}/>
             }
             <Box sx={newSessionDatePickerBox}>
                 <Typography sx={{color: secondaryActiveText}}> Your session is planned for: </Typography>
