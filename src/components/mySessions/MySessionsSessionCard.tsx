@@ -1,4 +1,4 @@
-import {Button, Card, CardActions, CardContent, Grid} from "@mui/material";
+import {Button, Card, CardActions, CardContent, Grid, Link} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import {Session} from "../../types/types";
 import Box from "@mui/material/Box";
@@ -40,12 +40,11 @@ function MySessionsSessionCard({session, setCheck}: Props) {
                         </Typography>
                     </Box>
                     <Typography variant="body2" sx={MySessionsNotesDemo}>
-                        <div dangerouslySetInnerHTML={{__html: applyDemoNotes(session.notes, 175)}}></div>
+                        <div dangerouslySetInnerHTML={{__html: applyDemoNotes(session.notes, 125)}}></div>
                     </Typography>
                 </CardContent>
                 <CardActions sx={{display: 'flex', justifyContent: 'space-around'}}>
-                    <Button size="small">View</Button>
-                    <Button size="small">Edit</Button>
+                    <Link href={`/session-details/${session.id}`}><Button size="small">View</Button></Link>
                     <Button onClick={handleDeleteButton} size="small">Remove</Button>
                 </CardActions>
             </Card>

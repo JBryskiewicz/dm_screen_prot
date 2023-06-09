@@ -63,7 +63,8 @@ export const MySessionsDateStyles = {
 export const MySessionsNotesDemo = {
     maxHeight: '80px',
     color: inactiveText,
-    marginTop: '12px'
+    marginTop: '12px',
+    overflow: 'hidden'
 }
 
 export const mySessionsStatisticsLabel = {

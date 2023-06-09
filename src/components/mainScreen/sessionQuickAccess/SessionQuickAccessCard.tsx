@@ -1,5 +1,5 @@
 import {activeText, inactiveText, secondaryActiveText} from "../../../utils/customColors";
-import {Button, Card, CardActions, CardContent} from "@mui/material";
+import {Button, Card, CardActions, CardContent, Link} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import {Session} from "../../../types/types";
 import {latestSessionCardStyles} from "../mainScreenStyles";
@@ -19,13 +19,12 @@ function SessionQuickAccessCard({session}: Props) {
                 <Typography sx={{fontSize: 14, color: secondaryActiveText}} color="text.secondary" gutterBottom>
                     {session.plannedDate !== null ? `Planned: ${applyDate(session.plannedDate)}` : `Session is not planned`}
                 </Typography>
-                <Typography variant="body2" sx={{maxHeight: '80px', color: inactiveText, marginTop: '12px'}}>
-                    <div dangerouslySetInnerHTML={{__html: applyDemoNotes(session.notes, 125)}}></div>
+                <Typography variant="body2" sx={{maxHeight: '80px', color: inactiveText, marginTop: '12px', overflow: 'hidden'}}>
+                    <div dangerouslySetInnerHTML={{__html: applyDemoNotes(session.notes, 100)}}></div>
                 </Typography>
             </CardContent>
             <CardActions sx={{display: 'flex', justifyContent: 'space-around'}}>
-                <Button size="small">Details</Button>
-                <Button size="small">Edit</Button>
+                <Link href={`/session-details/${session.id}`}><Button size="small">Details</Button></Link>
             </CardActions>
         </Card>
     );
