@@ -1,20 +1,21 @@
 import {newSessionBodyBox, newSessionDatePickerBox, newSessionUpperBox} from "../newSession/newSessionStyles";
 import Box from "@mui/material/Box";
-import {secondaryActiveText} from "../../utils/customColors";
-import Typography from "@mui/material/Typography";
-import {Chip} from "@mui/material";
 import {Session} from "../../types/types";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {API_URL} from "../../utils/constants";
 import {useParams} from "react-router-dom";
-import {applyDate} from "../../utils/supportFunctions";
 import {
     sessionDetailsCreationDateLabel,
     sessionDetailsNameLabel,
     sessionDetailsNotesBox,
     sessionDetailsPlannedDateLabel
 } from "./sessionDetailsStyles";
+import {Chip} from "@mui/material";
+import {applyDate, handleOnClick} from "../../utils/supportFunctions";
+import {secondaryActiveText} from "../../utils/customColors";
+import Typography from "@mui/material/Typography";
+import EditSessionName from "./editSessionDetails/EditSessionName";
 
 type RouteParams = {
     id: string;
@@ -29,14 +30,22 @@ const initialSession: Session = {
 }
 
 function SessionDetailsBody() {
-    const { id } = useParams<RouteParams>()
+    const {id} = useParams<RouteParams>()
     const [session, setSession] = useState<Session>(initialSession);
+    const [isEditable, setIsEditable] = useState<boolean[]>([false, false, false]);
+    const [check, setCheck] = useState<number>(0);
 
     useEffect(() => {
         getSession().then(data => {
             setSession(data);
         });
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        getSession().then(data => {
+            setSession(data);
+        });
+    }, [check]);
 
     async function getSession(): Promise<Session> {
         const response = await axios.get<Session>(`${API_URL}/${id}`);
@@ -46,26 +55,36 @@ function SessionDetailsBody() {
     return (
         <Box sx={newSessionBodyBox}>
             <Box sx={newSessionUpperBox}>
-                <Chip
-                    label={session.name}
-                    sx={sessionDetailsNameLabel}/>
+                {isEditable.at(0) === false
+                    ? <Chip
+                        label={session.name}
+                        onClick={() => handleOnClick(0, isEditable, setIsEditable)}
+                        sx={sessionDetailsNameLabel}/>
+                    : <EditSessionName isEditable={isEditable} setIsEditable={setIsEditable} id={session.id} setCheck={setCheck}/>
+                }
                 <Chip
                     label={`Created: ${applyDate(session.creationDate)}`}
                     sx={sessionDetailsCreationDateLabel}
                 />
             </Box>
-            <Box sx={sessionDetailsNotesBox}>
-                <div dangerouslySetInnerHTML={{__html: session.notes}} />
-            </Box>
+            {isEditable.at(1) === false
+                ? <div onClick={() => handleOnClick(1, isEditable, setIsEditable)}>
+                    <Box sx={sessionDetailsNotesBox}>
+                        <div dangerouslySetInnerHTML={{__html: session.notes}}/>
+                    </Box>
+                </div>
+                : <div onClick={() => handleOnClick(1, isEditable, setIsEditable)}>test</div>
+            }
             <Box sx={newSessionDatePickerBox}>
-                <Typography sx={{color: secondaryActiveText}}>
-                    Your session is planned for:
-                </Typography>
-                {/*There is no instance that plannedDate will be null*/}
-                <Chip
-                    label={`Planned: ${applyDate(session.plannedDate!)}`}
-                    sx={sessionDetailsPlannedDateLabel}
-                />
+                <Typography sx={{color: secondaryActiveText}}> Your session is planned for: </Typography>
+                {isEditable.at(2) === false
+                    ? <Chip
+                        label={`Planned: ${applyDate(session.plannedDate!)}`}
+                        onClick={() => handleOnClick(2, isEditable, setIsEditable)}
+                        sx={sessionDetailsPlannedDateLabel}
+                    />
+                    : <div onClick={() => handleOnClick(2, isEditable, setIsEditable)}>test</div>
+                }
             </Box>
         </Box>
     );
