@@ -42,3 +42,19 @@ export const sessionDetailsPlannedDateLabel = {
     padding: '2rem',
     marginTop: '20px'
 }
+
+export const sessionDetailsQuill = {
+    width: '80vw',
+    height: '539px',
+    color: secondaryActiveText,
+    marginTop: '20px',
+    marginBottom: '43px'
+}
+
+export const sessionDetailsDatePickerBox = {
+    width: '80vw',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    marginTop: '20px'
+}

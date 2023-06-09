@@ -1,11 +1,11 @@
 import {formats, modules} from "../../../utils/quillUtils";
-import {newSessionQuill} from "../../newSession/newSessionStyles";
 import ReactQuill from "react-quill";
 import {Session} from "../../../types/types";
 import React, {Dispatch, SetStateAction, useState} from "react";
 import {updateSessionField} from "../../../utils/apiCommunication";
 import {handleOnClick} from "../../../utils/supportFunctions";
 import {Button} from "@mui/material";
+import {sessionDetailsQuill} from "../sessionDetailsStyles";
 
 type Props = {
     isEditable: boolean[];
@@ -36,16 +36,25 @@ function EditSessionNotes({ isEditable, setIsEditable, session, setCheck }: Prop
                 formats={formats}
                 value={notes}
                 onChange={handleProcedureContentChange}
-                style={newSessionQuill}
+                style={sessionDetailsQuill}
             />
             <Button
                 type="submit"
                 sx={{
                     position: 'absolute',
                     top: '22.5px',
-                    right: 0
+                    right: '100px'
             }}>
                 Save Changes
+            </Button>
+            <Button
+            onClick={() => handleOnClick(1, isEditable, setIsEditable)}
+            sx={{
+                position: 'absolute',
+                top: '22.5px',
+                right: '20px'
+            }}>
+                Cancel
             </Button>
         </form>
     );

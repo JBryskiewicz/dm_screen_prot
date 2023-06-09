@@ -11,7 +11,7 @@ export async function postSession(data: NewSession) {
     await axios.post<NewSession>(API_URL, data);
 }
 
-export async function updateSessionField(fieldName: string, value: string | Date, id: number){
+export async function updateSessionField(fieldName: string, value: string | Date | null, id: number){
     await axios.patch<Session>(`${API_URL}/${id}`, {
         [fieldName]: value,
     });

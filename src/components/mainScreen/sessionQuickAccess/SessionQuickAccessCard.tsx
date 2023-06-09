@@ -19,7 +19,7 @@ function SessionQuickAccessCard({session}: Props) {
                 <Typography sx={{fontSize: 14, color: secondaryActiveText}} color="text.secondary" gutterBottom>
                     {session.plannedDate !== null ? `Planned: ${applyDate(session.plannedDate)}` : `Session is not planned`}
                 </Typography>
-                <Typography variant="body2" sx={{maxHeight: '80px', color: inactiveText, marginTop: '12px', overflow: 'hidden'}}>
+                <Typography variant="body2" sx={{maxHeight: '80px', color: inactiveText, overflow: 'hidden'}}>
                     <div dangerouslySetInnerHTML={{__html: applyDemoNotes(session.notes, 100)}}></div>
                 </Typography>
             </CardContent>

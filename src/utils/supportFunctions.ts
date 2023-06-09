@@ -12,6 +12,9 @@ export function sortAndSetSessions(setSessions: Dispatch<SetStateAction<Session[
 }
 
 export function applyDate(date: Date) {
+    if(date === null) {
+         return 'Session is not planned'
+    }
     return date
         .toString()
         .slice(0, 19)

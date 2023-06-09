@@ -1,4 +1,4 @@
-import {newSessionBodyBox, newSessionDatePickerBox, newSessionUpperBox} from "../newSession/newSessionStyles";
+import {newSessionBodyBox, newSessionUpperBox} from "../newSession/newSessionStyles";
 import Box from "@mui/material/Box";
 import {Session} from "../../types/types";
 import {useEffect, useState} from "react";
@@ -6,7 +6,7 @@ import axios from "axios";
 import {API_URL} from "../../utils/constants";
 import {useParams} from "react-router-dom";
 import {
-    sessionDetailsCreationDateLabel,
+    sessionDetailsCreationDateLabel, sessionDetailsDatePickerBox,
     sessionDetailsNameLabel,
     sessionDetailsNotesBox,
     sessionDetailsPlannedDateLabel
@@ -17,6 +17,7 @@ import {secondaryActiveText} from "../../utils/customColors";
 import Typography from "@mui/material/Typography";
 import EditSessionName from "./editSessionDetails/EditSessionName";
 import EditSessionNotes from "./editSessionDetails/EditSessionNotes";
+import EditSessionDatePicker from "./editSessionDetails/EditSessionDatePicker";
 
 type RouteParams = {
     id: string;
@@ -61,7 +62,7 @@ function SessionDetailsBody() {
                         label={session.name}
                         onClick={() => handleOnClick(0, isEditable, setIsEditable)}
                         sx={sessionDetailsNameLabel}/>
-                    : <EditSessionName isEditable={isEditable} setIsEditable={setIsEditable} id={session.id} setCheck={setCheck}/>
+                    : <EditSessionName isEditable={isEditable} setIsEditable={setIsEditable} session={session} setCheck={setCheck}/>
                 }
                 <Chip
                     label={`Created: ${applyDate(session.creationDate)}`}
@@ -76,7 +77,7 @@ function SessionDetailsBody() {
                   </div>
                 : <EditSessionNotes isEditable={isEditable} setIsEditable={setIsEditable} session={session} setCheck={setCheck}/>
             }
-            <Box sx={newSessionDatePickerBox}>
+            <Box sx={sessionDetailsDatePickerBox}>
                 <Typography sx={{color: secondaryActiveText}}> Your session is planned for: </Typography>
                 {isEditable.at(2) === false
                     ? <Chip
@@ -84,7 +85,7 @@ function SessionDetailsBody() {
                         onClick={() => handleOnClick(2, isEditable, setIsEditable)}
                         sx={sessionDetailsPlannedDateLabel}
                     />
-                    : <div onClick={() => handleOnClick(2, isEditable, setIsEditable)}>test</div>
+                    : <EditSessionDatePicker isEditable={isEditable} setIsEditable={setIsEditable} session={session} setCheck={setCheck} />
                 }
             </Box>
         </Box>
