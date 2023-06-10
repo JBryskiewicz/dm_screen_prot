@@ -7,6 +7,7 @@ import {getOneSession} from "../../utils/apiCommunication";
 import SessionDetailsNameBox from "./SessionDetailsNameBox";
 import SessionDetailsNotesBox from "./SessionDetailsNotesBox";
 import SessionDetailsDateBox from "./SessionDetailsDateBox";
+import BasicLoader from "../BasicLoader";
 
 type RouteParams = {
     id: string;
@@ -37,11 +38,19 @@ function SessionDetailsBody() {
         });
     }, [check]);
 
+    if(!Object.keys(session).length) {
+        return  (
+            <Box sx={newSessionBodyBox}>
+                <BasicLoader />
+            </Box>
+        )
+    }
+
     return (
         <Box sx={newSessionBodyBox}>
-            <SessionDetailsNameBox session={session} setCheck={setCheck} />
-            <SessionDetailsNotesBox session={session} setCheck={setCheck} />
-            <SessionDetailsDateBox session={session} setCheck={setCheck} />
+            <SessionDetailsNameBox session={session} setCheck={setCheck}/>
+            <SessionDetailsNotesBox session={session} setCheck={setCheck}/>
+            <SessionDetailsDateBox session={session} setCheck={setCheck}/>
         </Box>
     );
 }

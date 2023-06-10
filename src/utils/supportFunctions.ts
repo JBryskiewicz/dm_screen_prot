@@ -12,8 +12,8 @@ export function sortAndSetSessions(setSessions: Dispatch<SetStateAction<Session[
 }
 
 export function applyDate(date: Date) {
-    if(date === null) {
-         return 'Session is not planned'
+    if (date === null) {
+        return 'Session is not planned'
     }
     return date
         .toString()
@@ -30,9 +30,9 @@ export function applyDemoNotes(notes: string, charLimit: number) {
         .join('');
 }
 
- /**
-    This function handles onClick in session details components
-    allowing to display edit forms
+/**
+ This function handles onClick in session details components
+ allowing to display edit forms
  */
 export function handleOnClick(isEditable: boolean, setIsEditable: Dispatch<SetStateAction<boolean>>) {
     setIsEditable(!isEditable ? true : false);

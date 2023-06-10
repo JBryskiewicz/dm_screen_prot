@@ -3,6 +3,7 @@ import {Session} from "../../types/types";
 import MySessionsSessionCard from "./MySessionsSessionCard";
 import {Dispatch, SetStateAction} from "react";
 import {mySessionsListContainer} from "./mySessionsStyles";
+import BasicLoader from "../BasicLoader";
 
 type Props = {
     sessions: Session[]
@@ -10,6 +11,9 @@ type Props = {
 }
 
 function MySessionsList({sessions, setCheck}: Props) {
+    if(!sessions.length) {
+        return <BasicLoader />
+    }
     return (
         <Container sx={mySessionsListContainer}>
             <Grid container spacing={4} rowSpacing={1}>
