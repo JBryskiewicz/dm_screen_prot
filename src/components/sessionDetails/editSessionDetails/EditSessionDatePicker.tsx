@@ -8,8 +8,8 @@ import {handleOnClick} from "../../../utils/supportFunctions";
 import {Button} from "@mui/material";
 
 type Props = {
-    isEditable: boolean[];
-    setIsEditable: Dispatch<SetStateAction<boolean[]>>;
+    isEditable: boolean;
+    setIsEditable: Dispatch<SetStateAction<boolean>>;
     session: Session;
     setCheck: Dispatch<SetStateAction<number>>;
 }
@@ -25,7 +25,7 @@ function EditSessionDatePicker({ isEditable, setIsEditable, session, setCheck }:
         event.preventDefault();
         await updateSessionField('plannedDate', plannedDate, session.id);
         await setCheck(prevState => prevState === 0 ? 1 : 0);
-        await handleOnClick(2, isEditable, setIsEditable);
+        await handleOnClick(isEditable, setIsEditable);
     }
 
     return (
@@ -41,7 +41,7 @@ function EditSessionDatePicker({ isEditable, setIsEditable, session, setCheck }:
                 />
             </LocalizationProvider>
             <Button type="submit">Save</Button>
-            <Button onClick={() => handleOnClick(2, isEditable, setIsEditable)}>
+            <Button onClick={() => handleOnClick(isEditable, setIsEditable)}>
                 Cancel
             </Button>
         </form>

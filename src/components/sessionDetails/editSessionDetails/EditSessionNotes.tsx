@@ -8,8 +8,8 @@ import {Button} from "@mui/material";
 import {sessionDetailsQuill} from "../sessionDetailsStyles";
 
 type Props = {
-    isEditable: boolean[];
-    setIsEditable: Dispatch<SetStateAction<boolean[]>>;
+    isEditable: boolean;
+    setIsEditable: Dispatch<SetStateAction<boolean>>;
     session: Session;
     setCheck: Dispatch<SetStateAction<number>>;
 }
@@ -25,7 +25,7 @@ function EditSessionNotes({ isEditable, setIsEditable, session, setCheck }: Prop
         event.preventDefault();
         await updateSessionField('notes', notes, session.id);
         await setCheck(prevState => prevState === 0 ? 1 : 0);
-        await handleOnClick(1, isEditable, setIsEditable);
+        await handleOnClick(isEditable, setIsEditable);
     }
 
     return (
@@ -48,7 +48,7 @@ function EditSessionNotes({ isEditable, setIsEditable, session, setCheck }: Prop
                 Save Changes
             </Button>
             <Button
-            onClick={() => handleOnClick(1, isEditable, setIsEditable)}
+            onClick={() => handleOnClick(isEditable, setIsEditable)}
             sx={{
                 position: 'absolute',
                 top: '22.5px',

@@ -1,9 +1,8 @@
 import {Button, TextField} from "@mui/material";
 import Box from "@mui/material/Box";
 import {styled} from "@mui/material/styles";
-import {Formik, FormikHelpers} from "formik";
 import {NewSession} from "../../../types/types";
-import {Dispatch, SetStateAction} from "react";
+import {Dispatch, SetStateAction, useState} from "react";
 import {latestSessionsFormStyles, latestSessionsNewButton, latestSessionsTextField} from "../mainScreenStyles";
 import {postSession} from "../../../utils/apiCommunication";
 
@@ -13,57 +12,42 @@ type Props = {
     setCheck: Dispatch<SetStateAction<number>>
 }
 
-type FormValues = {
-    sessionName: string;
-}
-
 function SessionQuickAccessAdd({setCheck}: Props) {
+    const [sessionName, setSessionName] = useState<string>('');
 
-    async function handleSubmit(value: FormValues, {setSubmitting}: FormikHelpers<FormValues>) {
+    async function handleSubmit() {
         const newSession: NewSession = {
-            name: value.sessionName,
+            name: sessionName,
             notes: "",
             creationDate: new Date(),
             plannedDate: null
         }
 
         await postSession(newSession);
-        await setSubmitting(false);
         await setCheck(prevState => prevState === 0 ? 1 : 0);
-        value.sessionName = '';
+        setSessionName('');
     }
 
     return (
         <Box sx={{marginTop: '10px'}}>
-            <Formik
-                initialValues={{
-                    sessionName: ''
-                }}
+            <form
                 onSubmit={handleSubmit}
+                style={latestSessionsFormStyles}
             >
-                {
-                    ({ values, handleSubmit, handleChange, isSubmitting }) => (
-                        <form
-                            onSubmit={handleSubmit}
-                            style={latestSessionsFormStyles}
-                        >
-                            <CssTextField
-                                required
-                                label="Session name"
-                                id="sessionName"
-                                name="sessionName"
-                                value={values.sessionName}
-                                onChange={handleChange}
-                            />
-                            <Button
-                                type="submit"
-                                disabled={isSubmitting}
-                                sx={latestSessionsNewButton}>
-                                add
-                            </Button>
-                        </form>
-                    )}
-            </Formik>
+                <CssTextField
+                    required
+                    label="Session name"
+                    id="sessionName"
+                    name="sessionName"
+                    value={sessionName}
+                    onChange={(event) => setSessionName(event.target.value)}
+                />
+                <Button
+                    type="submit"
+                    sx={latestSessionsNewButton}>
+                    add
+                </Button>
+            </form>
         </Box>
     );
 }

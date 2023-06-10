@@ -6,6 +6,7 @@ import SessionQuickAccessAdd from "./SessionQuickAccessAdd";
 import Typography from "@mui/material/Typography";
 import {latestSessionsListHint} from "../mainScreenStyles";
 import {sortAndSetSessions} from "../../../utils/supportFunctions";
+import BasicLoader from "../../BasicLoader";
 
 function SessionQuickAccessList() {
     const [sessions, setSessions] = useState<Session[]>([]);
@@ -25,12 +26,14 @@ function SessionQuickAccessList() {
             <Typography sx={latestSessionsListHint}>
                 *list below is sorted by creation date (desc)
             </Typography>
-            <Box>
-                {sessions
-                    .slice(0,3)
-                    .map((session) => (
-                        <SessionQuickAccessCard key={session.id} session={session}/>
-                    ))
+            <Box sx={{minHeight: 'calc(100vh - 210px)'}}>
+                {!sessions.length
+                    ? <BasicLoader/>
+                    : sessions
+                        .slice(0, 3)
+                        .map((session) => (
+                            <SessionQuickAccessCard key={session.id} session={session}/>
+                        ))
                 }
             </Box>
         </>

@@ -83,6 +83,7 @@ export const mySessionsStatisticsCard = {
     maxWidth: 290,
     width: '18vw',
     maxHeight: '245px',
+    minHeight: '138px',
     backgroundColor: customTetraryColor,
     marginTop: '20px',
     paddingTop: '8px'
