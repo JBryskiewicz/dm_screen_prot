@@ -34,9 +34,6 @@ export function applyDemoNotes(notes: string, charLimit: number) {
     This function handles onClick in session details components
     allowing to display edit forms
  */
-
-export function handleOnClick(index: number, isEditable: boolean[], setIsEditable: Dispatch<SetStateAction<boolean[]>>) {
-    const newEditable = [...isEditable];
-    newEditable[index] = newEditable.at(index) === false
-    setIsEditable(newEditable);
+export function handleOnClick(isEditable: boolean, setIsEditable: Dispatch<SetStateAction<boolean>>) {
+    setIsEditable(!isEditable ? true : false);
 }
