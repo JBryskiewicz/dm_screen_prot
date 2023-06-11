@@ -1,13 +1,4 @@
-import {activeText, customPrimaryColor, inactiveText} from "../utils/customColors";
-
-export const navigationLinkStyle = {
-    color: inactiveText,
-    textDecoration: 'none',
-    '&:hover': {
-        color: activeText,
-        transition: '.75s'
-    }
-}
+import {customPrimaryColor, inactiveText} from "../utils/customColors";
 
 export const navigationBody = {
     height: 'calc(100vh - 64px)',

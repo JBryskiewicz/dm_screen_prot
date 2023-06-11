@@ -1,10 +1,11 @@
 import {activeText, inactiveText, secondaryActiveText} from "../../../utils/customColors";
-import {Button, Card, CardActions, CardContent, Link} from "@mui/material";
+import {Button, Card, CardActions, CardContent} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import {Session} from "../../../types/types";
 import {latestSessionCardStyles} from "../../../sx/mainScreenStyles";
 import {applyDate, applyDemoNotes} from "../../../utils/supportFunctions";
 import parse from 'html-react-parser';
+import {Link} from "react-router-dom";
 
 type Props = {
     session: Session
@@ -39,7 +40,7 @@ function SessionQuickAccessCard({session}: Props) {
                 </Typography>
             </CardContent>
             <CardActions sx={{display: 'flex', justifyContent: 'space-around'}}>
-                <Link href={`/session-details/${session.id}`}>
+                <Link to={`/session-details/${session.id}`}>
                     <Button size="small">
                         Details
                     </Button>
