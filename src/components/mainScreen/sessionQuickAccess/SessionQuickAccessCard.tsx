@@ -4,12 +4,16 @@ import Typography from "@mui/material/Typography";
 import {Session} from "../../../types/types";
 import {latestSessionCardStyles} from "../../../sx/mainScreenStyles";
 import {applyDate, applyDemoNotes} from "../../../utils/supportFunctions";
+import parse from 'html-react-parser';
 
 type Props = {
     session: Session
 }
 
 function SessionQuickAccessCard({session}: Props) {
+
+    const parsedNotes = parse(applyDemoNotes(session.notes, 100));
+
     return (
         <Card sx={latestSessionCardStyles}>
             <CardContent>
@@ -31,9 +35,7 @@ function SessionQuickAccessCard({session}: Props) {
                     variant="body2"
                     sx={{maxHeight: '80px', color: inactiveText, overflow: 'hidden'}}
                 >
-                    <div dangerouslySetInnerHTML={
-                        {__html: applyDemoNotes(session.notes, 100)}
-                    }/>
+                    <div>{ parsedNotes }</div>
                 </Typography>
             </CardContent>
             <CardActions sx={{display: 'flex', justifyContent: 'space-around'}}>
