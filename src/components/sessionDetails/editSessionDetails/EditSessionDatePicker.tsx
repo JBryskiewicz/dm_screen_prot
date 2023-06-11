@@ -1,6 +1,6 @@
 import {AdapterDateFns} from "@mui/x-date-pickers/AdapterDateFns";
 import {DatePicker, LocalizationProvider} from "@mui/x-date-pickers";
-import {newSessionDatePickerBody} from "../../newSession/newSessionStyles";
+import {newSessionDatePickerBody} from "../../../sx/newSessionStyles";
 import React, {Dispatch, SetStateAction, useState} from "react";
 import {Session} from "../../../types/types";
 import {updateSessionField} from "../../../utils/apiCommunication";
@@ -23,6 +23,11 @@ function EditSessionDatePicker({ isEditable, setIsEditable, session, setCheck }:
 
     async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
+
+        if (plannedDate !== null) {
+            plannedDate.setDate(plannedDate.getDate() + 1);
+        }
+
         await updateSessionField('plannedDate', plannedDate, session.id);
         await setCheck(prevState => prevState === 0 ? 1 : 0);
         await handleOnClick(isEditable, setIsEditable);

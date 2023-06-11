@@ -1,6 +1,6 @@
 import Box from "@mui/material/Box";
 import SessionQuickAccessList from "./sessionQuickAccess/SessionQuickAccessList";
-import {latestSessionsStyle, MainBodyBoxStyle} from "./mainScreenStyles";
+import {latestSessionsStyle, MainBodyBoxStyle} from "../../sx/mainScreenStyles";
 
 function MainBody() {
 

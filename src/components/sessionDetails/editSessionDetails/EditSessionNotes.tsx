@@ -5,7 +5,7 @@ import React, {Dispatch, SetStateAction, useState} from "react";
 import {updateSessionField} from "../../../utils/apiCommunication";
 import {handleOnClick} from "../../../utils/supportFunctions";
 import {Button} from "@mui/material";
-import {sessionDetailsQuill} from "../sessionDetailsStyles";
+import {sessionDetailsQuill} from "../../../sx/sessionDetailsStyles";
 
 type Props = {
     isEditable: boolean;
@@ -37,6 +37,7 @@ function EditSessionNotes({ isEditable, setIsEditable, session, setCheck }: Prop
                 value={notes}
                 onChange={handleProcedureContentChange}
                 style={sessionDetailsQuill}
+                placeholder={"Write your notes here..."}
             />
             <Button
                 type="submit"

@@ -1,4 +1,4 @@
-import {newSessionBodyBox} from "../newSession/newSessionStyles";
+import {newSessionBodyBox} from "../../sx/newSessionStyles";
 import Box from "@mui/material/Box";
 import {Session} from "../../types/types";
 import {useEffect, useState} from "react";
@@ -7,7 +7,7 @@ import {getOneSession} from "../../utils/apiCommunication";
 import SessionDetailsNameBox from "./SessionDetailsNameBox";
 import SessionDetailsNotesBox from "./SessionDetailsNotesBox";
 import SessionDetailsDateBox from "./SessionDetailsDateBox";
-import BasicLoader from "../BasicLoader";
+import BasicLoader from "../loaders/BasicLoader";
 
 type RouteParams = {
     id: string;

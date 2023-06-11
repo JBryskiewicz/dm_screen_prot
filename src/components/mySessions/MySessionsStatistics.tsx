@@ -2,9 +2,9 @@ import Box from "@mui/material/Box";
 import {Card, CardContent, Chip} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import {Session} from "../../types/types";
-import {latestSessionsStyle} from "../mainScreen/mainScreenStyles";
-import {mySessionsStatisticsCard, mySessionsStatisticsLabel, mySessionsStatisticsTypography} from "./mySessionsStyles";
-import BasicLoader from "../BasicLoader";
+import {latestSessionsStyle} from "../../sx/mainScreenStyles";
+import {mySessionsStatisticsCard, mySessionsStatisticsLabel, mySessionsStatisticsTypography} from "../../sx/mySessionsStyles";
+import BasicLoader from "../loaders/BasicLoader";
 
 type Props = {
     sessions: Session[];

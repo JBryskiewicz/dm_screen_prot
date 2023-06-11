@@ -1,6 +1,6 @@
-import {newSessionsNameField, newSessionUpperBox} from "./newSessionStyles";
+import {newSessionsNameField, newSessionUpperBox} from "../../sx/newSessionStyles";
 import {Button, TextField} from "@mui/material";
-import {latestSessionsNewButton} from "../mainScreen/mainScreenStyles";
+import {latestSessionsNewButton} from "../../sx/mainScreenStyles";
 import Box from "@mui/material/Box";
 import {Dispatch, SetStateAction} from "react";
 import {styled} from "@mui/material/styles";

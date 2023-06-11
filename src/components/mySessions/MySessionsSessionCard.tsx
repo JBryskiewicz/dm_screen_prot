@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 import axios from "axios";
 import {API_URL} from "../../utils/constants";
 import {Dispatch, SetStateAction} from "react";
-import {MySessionsCardItem, MySessionsDateStyles, MySessionsNameStyles, MySessionsNotesDemo} from "./mySessionsStyles";
+import {MySessionsCardItem, MySessionsDateStyles, MySessionsNameStyles, MySessionsNotesDemo} from "../../sx/mySessionsStyles";
 import {applyDate, applyDemoNotes} from "../../utils/supportFunctions";
 
 type Props = {

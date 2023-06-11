@@ -1,0 +1,21 @@
+.quill {
+  background-color: $customTetraryColor;
+
+  .ql-toolbar {
+    background-color: white;
+  }
+
+  .ql-container {
+    font-size: 16px;
+    background-color: $customTetraryColor;
+  }
+
+  .ql-editor {
+    line-height: 1.5;
+  }
+
+  .ql-editor.ql-blank::before {
+    color: $primaryInactiveText;
+  }
+}
+

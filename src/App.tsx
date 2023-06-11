@@ -2,6 +2,7 @@ import PrimarySearchAppBar from "./components/header/PrimarySearchAppBar";
 import LeftNavigation from "./components/leftMenu/LeftNavigation";
 import Box from "@mui/material/Box";
 import {Outlet} from "react-router-dom";
+import "./scss/main.scss"
 
 function App() {
     return (

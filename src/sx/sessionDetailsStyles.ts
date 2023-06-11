@@ -1,4 +1,4 @@
-import {customTetraryColor, secondaryActiveText} from "../../utils/customColors";
+import {customTetraryColor, secondaryActiveText} from "../utils/customColors";
 
 export const sessionDetailsNameLabel = {
     width: '400px',
@@ -20,12 +20,13 @@ export const sessionDetailsCreationDateLabel = {
 }
 
 export const sessionDetailsNotesBox = {
-    color: secondaryActiveText,
     height: '582px',
     width: '80vw',
+    color: secondaryActiveText,
+    backgroundColor: customTetraryColor,
     border: `1px solid ${secondaryActiveText}`,
     marginTop: '20px',
-    padding: '12px 32px',
+    padding: '16px',
     overflow: 'auto',
     '&::-webkit-scrollbar': {
         display: 'none'
@@ -33,14 +34,14 @@ export const sessionDetailsNotesBox = {
 }
 
 export const sessionDetailsPlannedDateLabel = {
-    width: '25%',
+    width: '20%',
     fontSize: '1.125rem',
     color: secondaryActiveText,
     backgroundColor: customTetraryColor,
     border: `1px solid ${secondaryActiveText}`,
     borderRadius: '4px',
-    padding: '2rem',
-    marginTop: '20px'
+    padding: '1.75rem 0',
+    marginTop: '10px'
 }
 
 export const sessionDetailsQuill = {

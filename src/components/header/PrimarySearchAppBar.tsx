@@ -12,7 +12,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import {customPrimaryColor} from "../../utils/customColors";
 import {Search, SearchIconWrapper, StyledInputBase} from "./SearchBar";
-import {headerIconStyling} from "./headerStyles";
+import {headerIconStyling} from "../../sx/headerStyles";
 
 export default function PrimarySearchAppBar() {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);

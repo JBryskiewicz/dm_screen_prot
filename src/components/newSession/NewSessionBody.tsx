@@ -1,6 +1,6 @@
 import "react-quill/dist/quill.snow.css";
 import Box from "@mui/material/Box";
-import {newSessionBodyBox} from "./newSessionStyles";
+import {newSessionBodyBox} from "../../sx/newSessionStyles";
 import React, {useState} from "react";
 import NewSessionTextEditor from "./NewSessionTextEditor";
 import NewSessionDatePlanner from "./NewSessionDatePlanner";
@@ -18,6 +18,10 @@ function NewSessionBody() {
 
     async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
+
+        if (plannedDate !== null) {
+            plannedDate.setDate(plannedDate.getDate() + 1);
+        }
 
         const newSession: NewSession = {
             name: sessionName,

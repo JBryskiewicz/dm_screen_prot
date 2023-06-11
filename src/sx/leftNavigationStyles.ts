@@ -1,4 +1,4 @@
-import {activeText, customPrimaryColor, inactiveText} from "../../utils/customColors";
+import {activeText, customPrimaryColor, inactiveText} from "../utils/customColors";
 
 export const navigationLinkStyle = {
     color: inactiveText,

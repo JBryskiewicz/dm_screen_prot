@@ -4,7 +4,7 @@ import {DatePicker, LocalizationProvider} from "@mui/x-date-pickers";
 import {AdapterDateFns} from "@mui/x-date-pickers/AdapterDateFns";
 import Box from "@mui/material/Box";
 import {Dispatch, SetStateAction} from "react";
-import {newSessionDatePickerBody, newSessionDatePickerBox} from "./newSessionStyles";
+import {newSessionDatePickerBody, newSessionDatePickerBox} from "../../sx/newSessionStyles";
 
 type Props = {
     plannedDate: Date | null
