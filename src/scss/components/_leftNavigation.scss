@@ -1,0 +1,9 @@
+.left-navigation-links {
+  color: $primaryInactiveText;
+  text-decoration: none;
+
+  &:hover {
+    color: $activeText;
+    transition: .75s;
+  }
+}

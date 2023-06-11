@@ -1,4 +1,4 @@
-import {Button, Card, CardActions, CardContent, Grid, Link} from "@mui/material";
+import {Button, Card, CardActions, CardContent, Grid} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import {Session} from "../../types/types";
 import Box from "@mui/material/Box";
@@ -8,6 +8,7 @@ import {Dispatch, SetStateAction} from "react";
 import {MySessionsCardItem, MySessionsDateStyles, MySessionsNameStyles, MySessionsNotesDemo} from "../../sx/mySessionsStyles";
 import {applyDate, applyDemoNotes} from "../../utils/supportFunctions";
 import parse from "html-react-parser";
+import {Link} from "react-router-dom";
 
 type Props = {
     session: Session
@@ -50,7 +51,7 @@ function MySessionsSessionCard({session, setCheck}: Props) {
                     </Typography>
                 </CardContent>
                 <CardActions sx={{display: 'flex', justifyContent: 'space-around'}}>
-                    <Link href={`/session-details/${session.id}`}>
+                    <Link to={`/session-details/${session.id}`}>
                         <Button size="small">View</Button>
                     </Link>
                     <Button onClick={handleDeleteButton} size="small">Remove</Button>

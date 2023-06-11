@@ -12,8 +12,8 @@ import {
     inactiveText
 } from "../../utils/customColors";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
-import {Link} from "@mui/material";
-import {navigationAccordion, navigationBody, navigationLinkStyle} from "../../sx/leftNavigationStyles";
+import {Link} from "react-router-dom";
+import {navigationAccordion, navigationBody} from "../../sx/leftNavigationStyles";
 
 const BUILD_VERSION = 'version 0.0.1'
 
@@ -74,8 +74,8 @@ export default function LeftNavigation() {
                         <Typography>My Creations</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <Link href={'/'} sx={navigationLinkStyle}>{'Main Screen'}</Link>
-                        <Link href={'/my-sessions'} sx={navigationLinkStyle}>{'My sessions'}</Link>
+                        <Link to={'/'} className={'left-navigation-links'}>{'Main Screen'}</Link>
+                        <Link to={'/my-sessions'} className={'left-navigation-links'}>{'My sessions'}</Link>
                     </AccordionDetails>
                 </Accordion>
                 <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
@@ -83,8 +83,8 @@ export default function LeftNavigation() {
                         <Typography>Game Rules</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <Link href={'#'} sx={navigationLinkStyle}>{'Classes'}</Link>
-                        <Link href={'#'} sx={navigationLinkStyle}>{'Source Books'}</Link>
+                        <Link to={'#'} className={'left-navigation-links'}>{'Classes'}</Link>
+                        <Link to={'#'} className={'left-navigation-links'}>{'Source Books'}</Link>
                     </AccordionDetails>
                 </Accordion>
                 <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
@@ -92,7 +92,7 @@ export default function LeftNavigation() {
                         <Typography>Features</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <Link href={'#'} sx={navigationLinkStyle}>{'subscribe'}</Link>
+                        <Link to={'#'} className={'left-navigation-links'}>{'subscribe'}</Link>
                     </AccordionDetails>
                 </Accordion>
             </Box>
