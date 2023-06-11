@@ -1,11 +1,11 @@
 import {Dispatch, SetStateAction, useState} from "react";
 import {Session} from "../../types/types";
-import {newSessionUpperBox} from "../newSession/newSessionStyles";
+import {newSessionUpperBox} from "../../sx/newSessionStyles";
 import {SessionDetailsName} from "./SessionDetailsDisplayComponents";
 import EditSessionName from "./editSessionDetails/EditSessionName";
 import {Chip} from "@mui/material";
 import {applyDate} from "../../utils/supportFunctions";
-import {sessionDetailsCreationDateLabel} from "./sessionDetailsStyles";
+import {sessionDetailsCreationDateLabel} from "../../sx/sessionDetailsStyles";
 import Box from "@mui/material/Box";
 
 type Props = {

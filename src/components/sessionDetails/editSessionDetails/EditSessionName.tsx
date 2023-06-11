@@ -1,6 +1,6 @@
 import {styled} from "@mui/material/styles";
 import {TextField} from "@mui/material";
-import {newSessionsNameField} from "../../newSession/newSessionStyles";
+import {newSessionsNameField} from "../../../sx/newSessionStyles";
 import React, {Dispatch, SetStateAction, useState} from "react";
 import {updateSessionField} from "../../../utils/apiCommunication";
 import {Session} from "../../../types/types";

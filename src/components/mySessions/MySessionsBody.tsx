@@ -4,7 +4,7 @@ import MySessionsStatistics from "./MySessionsStatistics";
 import MySessionsList from "./MySessionsList";
 import {useEffect, useState} from "react";
 import {Session} from "../../types/types";
-import {SessionsBodyBoxStyle} from "./mySessionsStyles";
+import {SessionsBodyBoxStyle} from "../../sx/mySessionsStyles";
 import {sortAndSetSessions} from "../../utils/supportFunctions";
 
 function MySessionsBody() {

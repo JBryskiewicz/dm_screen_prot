@@ -1,7 +1,7 @@
 import {Dispatch, SetStateAction} from "react";
 import {Session} from "../../types/types";
 import {applyDate, handleOnClick} from "../../utils/supportFunctions";
-import {sessionDetailsNameLabel, sessionDetailsNotesBox, sessionDetailsPlannedDateLabel} from "./sessionDetailsStyles";
+import {sessionDetailsNameLabel, sessionDetailsNotesBox, sessionDetailsPlannedDateLabel} from "../../sx/sessionDetailsStyles";
 import {Chip} from "@mui/material";
 import Box from "@mui/material/Box";
 

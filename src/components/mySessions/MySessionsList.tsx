@@ -2,8 +2,8 @@ import {Container, Grid} from "@mui/material";
 import {Session} from "../../types/types";
 import MySessionsSessionCard from "./MySessionsSessionCard";
 import {Dispatch, SetStateAction} from "react";
-import {mySessionsListContainer} from "./mySessionsStyles";
-import BasicLoader from "../BasicLoader";
+import {mySessionsListContainer} from "../../sx/mySessionsStyles";
+import BasicLoader from "../loaders/BasicLoader";
 
 type Props = {
     sessions: Session[]

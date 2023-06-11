@@ -1,6 +1,6 @@
 import {Button, Link} from "@mui/material";
 import Box from "@mui/material/Box";
-import {mySessionsButtonBox, mySessionsNewButton} from "./mySessionsStyles";
+import {mySessionsButtonBox, mySessionsNewButton} from "../../sx/mySessionsStyles";
 
 function MySessionsButtons() {
     return (

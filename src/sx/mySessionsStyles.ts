@@ -4,7 +4,7 @@ import {
     customTetraryColor,
     inactiveText,
     secondaryActiveText
-} from "../../utils/customColors";
+} from "../utils/customColors";
 
 export const SessionsBodyBoxStyle = {
     maxHeight: 'calc(100vh - 84px)',

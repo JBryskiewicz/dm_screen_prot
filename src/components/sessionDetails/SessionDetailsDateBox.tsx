@@ -1,6 +1,6 @@
 import {Session} from "../../types/types";
 import {Dispatch, SetStateAction, useState} from "react";
-import {sessionDetailsDatePickerBox} from "./sessionDetailsStyles";
+import {sessionDetailsDatePickerBox} from "../../sx/sessionDetailsStyles";
 import Typography from "@mui/material/Typography";
 import {secondaryActiveText} from "../../utils/customColors";
 import {SessionDetailsPlannedDate} from "./SessionDetailsDisplayComponents";

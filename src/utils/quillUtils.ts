@@ -7,6 +7,7 @@ const myColors = [
     "#254563",
     "white"
 ];
+
 export const modules = {
     toolbar: [
         [{ header: [1, 2, 3, 4, 5, 6, false] }],
@@ -16,8 +17,12 @@ export const modules = {
         ["link", "image"],
         [{ color: myColors }],
         [{ background: myColors }]
-    ]
+    ],
+    clipboard : {
+        matchVisual: false
+    }
 };
+
 export const formats = [
     "header",
     "bold",

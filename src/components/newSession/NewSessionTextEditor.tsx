@@ -1,6 +1,6 @@
 import {Dispatch, SetStateAction} from "react";
 import {formats, modules} from "../../utils/quillUtils";
-import {newSessionQuill} from "./newSessionStyles";
+import {newSessionQuill} from "../../sx/newSessionStyles";
 import ReactQuill from "react-quill";
 
 type Props = {
@@ -22,6 +22,7 @@ function NewSessionTextEditor({notes, setNotes}: Props) {
             value={notes}
             onChange={handleProcedureContentChange}
             style={newSessionQuill}
+            placeholder={"Write your notes here..."}
         />
     );
 }

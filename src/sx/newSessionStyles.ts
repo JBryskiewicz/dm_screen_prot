@@ -4,7 +4,7 @@ import {
     customTetraryColor,
     inactiveText,
     secondaryActiveText
-} from "../../utils/customColors";
+} from "../utils/customColors";
 
 export const newSessionBodyBox = {
     maxHeight: 'calc(100vh - 84px)',
@@ -73,5 +73,31 @@ export const newSessionDatePickerBody = {
     backgroundColor: customTetraryColor,
     border: `1px solid ${secondaryActiveText}`,
     borderRadius: '4px',
-    marginTop: '10px'
+    marginTop: '10px',
+    '& label': {
+        color: inactiveText
+    },
+    '& .MuiInputBase-input': {
+        color: inactiveText
+    },
+    '& label.Mui-focused': {
+        color: activeText,
+    },
+    '& .MuiInput-underline:after': {
+        borderBottomColor: secondaryActiveText,
+    },
+    '& .MuiOutlinedInput-root': {
+        '& fieldset': {
+            borderColor: inactiveText,
+        },
+        '&:hover fieldset': {
+            borderColor: activeText,
+        },
+        '&.Mui-focused fieldset': {
+            borderColor: activeText,
+        },
+    },
+    '& .MuiSvgIcon-root': {
+        color: secondaryActiveText,
+    }
 }

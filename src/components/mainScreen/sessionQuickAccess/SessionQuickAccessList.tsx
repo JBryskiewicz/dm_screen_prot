@@ -4,9 +4,9 @@ import {useEffect, useState} from "react";
 import {Session} from "../../../types/types";
 import SessionQuickAccessAdd from "./SessionQuickAccessAdd";
 import Typography from "@mui/material/Typography";
-import {latestSessionsListHint} from "../mainScreenStyles";
+import {latestSessionsListHint} from "../../../sx/mainScreenStyles";
 import {sortAndSetSessions} from "../../../utils/supportFunctions";
-import BasicLoader from "../../BasicLoader";
+import BasicLoader from "../../loaders/BasicLoader";
 
 function SessionQuickAccessList() {
     const [sessions, setSessions] = useState<Session[]>([]);

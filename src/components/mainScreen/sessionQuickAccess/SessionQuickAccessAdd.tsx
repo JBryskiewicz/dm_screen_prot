@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import {styled} from "@mui/material/styles";
 import {NewSession} from "../../../types/types";
 import {Dispatch, SetStateAction, useState} from "react";
-import {latestSessionsFormStyles, latestSessionsNewButton, latestSessionsTextField} from "../mainScreenStyles";
+import {latestSessionsFormStyles, latestSessionsNewButton, latestSessionsTextField} from "../../../sx/mainScreenStyles";
 import {postSession} from "../../../utils/apiCommunication";
 
 const CssTextField = styled(TextField)(latestSessionsTextField);
