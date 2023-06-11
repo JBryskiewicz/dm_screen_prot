@@ -4,6 +4,7 @@ import {applyDate, handleOnClick} from "../../utils/supportFunctions";
 import {sessionDetailsNameLabel, sessionDetailsNotesBox, sessionDetailsPlannedDateLabel} from "../../sx/sessionDetailsStyles";
 import {Chip} from "@mui/material";
 import Box from "@mui/material/Box";
+import parse from "html-react-parser";
 
 type Props = {
     isEditable: boolean;
@@ -22,10 +23,11 @@ export function SessionDetailsName({ isEditable, setIsEditable, session }: Props
 }
 
 export function SessionDetailsNotes({ isEditable, setIsEditable, session }: Props) {
+    const parsedNotes = parse(session.notes);
     return (
         <div onClick={() => handleOnClick(isEditable, setIsEditable)}>
             <Box sx={sessionDetailsNotesBox}>
-                <div dangerouslySetInnerHTML={{__html: session.notes}}/>
+                <div>{ parsedNotes }</div>
             </Box>
         </div>
     );
