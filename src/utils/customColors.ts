@@ -4,3 +4,4 @@ export const customTetraryColor = "#282534";
 export const inactiveText = 'grey';
 export const secondaryActiveText = '#b1b1b1';
 export const activeText = 'white';
+export const customFeatureColor = "#c6e2ff";

@@ -1,12 +1,12 @@
 import {
-    activeText,
+    activeText, customFeatureColor,
     customPrimaryColor,
     customTetraryColor,
     inactiveText,
     secondaryActiveText
 } from "../utils/customColors";
 
-export const MainBodyBoxStyle = {
+export const mainBodyBoxStyle = {
     maxHeight: 'calc(100vh - 84px)',
     width: '72vw',
     display: 'flex',
@@ -15,6 +15,34 @@ export const MainBodyBoxStyle = {
     color: activeText,
     backgroundColor: customPrimaryColor,
     margin: '10px'
+}
+
+export const mainBodyFeaturesCard = {
+    height: 'calc(100% - 40px)',
+    width: 'calc(100% - 40px)',
+    display: 'flex',
+    flexDirection: 'column',
+    // justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: customPrimaryColor,
+    overflow: 'hidden',
+    paddingTop: '5%'
+}
+
+export const mainBodyFeaturesContainer = {
+    borderRadius: '4px',
+    borderBottom: '1px solid #151515',
+    boxShadow: '16x 0 #888888',
+    backgroundColor: customTetraryColor,
+    marginTop: '50px',
+    padding: '60px 0'
+}
+
+export const mainBodyFeatureSmallCard = {
+    '&:hover': {
+        backgroundColor: customFeatureColor,
+        transition: '.75s'
+    }
 }
 
 export const latestSessionsTextField = {
