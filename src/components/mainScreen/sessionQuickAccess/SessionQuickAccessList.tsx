@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import {Session} from "../../../types/types";
 import SessionQuickAccessAdd from "./SessionQuickAccessAdd";
 import Typography from "@mui/material/Typography";
-import {latestSessionsListHint} from "../../../sx/mainScreenStyles";
+import {latestSessionsListHint, latestSessionsStyle} from "../../../sx/mainScreenStyles";
 import {sortAndSetSessions} from "../../../utils/supportFunctions";
 import BasicLoader from "../../loaders/BasicLoader";
 
@@ -21,7 +21,7 @@ function SessionQuickAccessList() {
     }, [check]);
 
     return (
-        <>
+        <Box sx={latestSessionsStyle}>
             <SessionQuickAccessAdd setCheck={setCheck}/>
             <Typography sx={latestSessionsListHint}>
                 *list below is sorted by creation date (desc)
@@ -36,7 +36,7 @@ function SessionQuickAccessList() {
                         ))
                 }
             </Box>
-        </>
+        </Box>
     );
 }
 

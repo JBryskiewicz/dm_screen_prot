@@ -1,17 +1,12 @@
-import Box from "@mui/material/Box";
 import SessionQuickAccessList from "./sessionQuickAccess/SessionQuickAccessList";
-import {latestSessionsStyle, MainBodyBoxStyle} from "../../sx/mainScreenStyles";
+import Introduction from "./Introduction";
 
 function MainBody() {
 
     return (
         <>
-            <Box sx={MainBodyBoxStyle}>
-                <h1>DUNGEON MASTER SCREEN</h1>
-            </Box>
-            <Box sx={latestSessionsStyle}>
-                <SessionQuickAccessList/>
-            </Box>
+            <Introduction />
+            <SessionQuickAccessList/>
         </>
     );
 }

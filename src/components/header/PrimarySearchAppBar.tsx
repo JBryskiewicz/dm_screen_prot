@@ -10,9 +10,10 @@ import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import {customPrimaryColor} from "../../utils/customColors";
+import {activeText, customPrimaryColor} from "../../utils/customColors";
 import {Search, SearchIconWrapper, StyledInputBase} from "./SearchBar";
 import {headerIconStyling} from "../../sx/headerStyles";
+import {Link} from "react-router-dom";
 
 export default function PrimarySearchAppBar() {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -52,14 +53,27 @@ export default function PrimarySearchAppBar() {
         <Box sx={{flexGrow: 1}}>
             <AppBar position="static">
                 <Toolbar sx={{backgroundColor: customPrimaryColor}}>
-                    <Typography
-                        variant="h4"
-                        noWrap
-                        component="div"
-                        sx={{display: {xs: 'none', sm: 'block'}}}
-                    >
-                        DMS
-                    </Typography>
+                    <Link to={"/"} style={{textDecoration: 'none', color: activeText, marginLeft: '20px'}}>
+                        <div style={{display: 'flex', alignItems: 'center'}}>
+                            <img
+                                src={"../../../public/assets/icon.png"}
+                                alt={'Dungeon Master Screen logo'}
+                                style={{width: '40px', height: '40px'}}
+                            />
+                            <Typography
+                                variant="h4"
+                                noWrap
+                                component="div"
+                                sx={{
+                                    display: {xs: 'none', sm: 'block'},
+                                    margin: '10px 51.5px 0 5px',
+                                    paddingBottom: '5px'
+                                }}
+                            >
+                                DMS
+                            </Typography>
+                        </div>
+                    </Link>
                     <Search>
                         <SearchIconWrapper>
                             <SearchIcon/>
@@ -97,7 +111,10 @@ export default function PrimarySearchAppBar() {
                     </Box>
                 </Toolbar>
             </AppBar>
-            {renderMenu}
+            {
+                renderMenu
+            }
         </Box>
-    );
+    )
+        ;
 }
