@@ -13,10 +13,6 @@ function MySessionsBody() {
 
     useEffect(() => {
         sortAndSetSessions(setSessions);
-    }, []);
-
-    useEffect(() => {
-        sortAndSetSessions(setSessions);
     }, [check]);
 
     return (

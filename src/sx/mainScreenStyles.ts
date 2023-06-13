@@ -4,7 +4,7 @@ import {
     customTetraryColor,
     inactiveText,
     secondaryActiveText
-} from "../utils/customColors";
+} from "./customColors";
 
 export const mainBodyBoxStyle = {
     maxHeight: 'calc(100vh - 84px)',
@@ -22,7 +22,6 @@ export const mainBodyFeaturesCard = {
     width: 'calc(100% - 40px)',
     display: 'flex',
     flexDirection: 'column',
-    // justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: customPrimaryColor,
     overflow: 'hidden',
@@ -115,4 +114,10 @@ export const latestSessionCardStyles = {
     height: '220px',
     backgroundColor: customTetraryColor,
     marginBottom: '20px'
+}
+
+export const latestSessionDemoNotes = {
+    maxHeight: '90px',
+    color: inactiveText,
+    overflow: 'hidden'
 }

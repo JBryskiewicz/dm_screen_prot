@@ -1,4 +1,4 @@
-import {customPrimaryColor, inactiveText} from "../utils/customColors";
+import {customPrimaryColor, inactiveText} from "./customColors";
 
 export const navigationBody = {
     height: 'calc(100vh - 64px)',

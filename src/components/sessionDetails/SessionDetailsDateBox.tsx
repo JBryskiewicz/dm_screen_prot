@@ -2,7 +2,7 @@ import {Session} from "../../types/types";
 import {Dispatch, SetStateAction, useState} from "react";
 import {sessionDetailsDatePickerBox} from "../../sx/sessionDetailsStyles";
 import Typography from "@mui/material/Typography";
-import {secondaryActiveText} from "../../utils/customColors";
+import {secondaryActiveText} from "../../sx/customColors";
 import {SessionDetailsPlannedDate} from "./SessionDetailsDisplayComponents";
 import EditSessionDatePicker from "./editSessionDetails/EditSessionDatePicker";
 import Box from "@mui/material/Box";

@@ -30,12 +30,6 @@ function SessionDetailsBody() {
         getOneSession(id).then(data => {
             setSession(data);
         });
-    }, []);
-
-    useEffect(() => {
-        getOneSession(id).then(data => {
-            setSession(data);
-        });
     }, [check]);
 
     if(!Object.keys(session).length) {

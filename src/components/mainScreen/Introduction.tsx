@@ -1,7 +1,7 @@
 import {
     activeText,
     secondaryActiveText
-} from "../../utils/customColors";
+} from "../../sx/customColors";
 import {Card, CardContent, Container, Grid} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import {

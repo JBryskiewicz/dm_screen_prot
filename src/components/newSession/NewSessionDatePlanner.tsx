@@ -1,5 +1,5 @@
 import Typography from "@mui/material/Typography";
-import {secondaryActiveText} from "../../utils/customColors";
+import {secondaryActiveText} from "../../sx/customColors";
 import {DatePicker, LocalizationProvider} from "@mui/x-date-pickers";
 import {AdapterDateFns} from "@mui/x-date-pickers/AdapterDateFns";
 import Box from "@mui/material/Box";

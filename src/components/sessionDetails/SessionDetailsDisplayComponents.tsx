@@ -27,7 +27,7 @@ export function SessionDetailsNotes({ isEditable, setIsEditable, session }: Prop
     return (
         <div onClick={() => handleOnClick(isEditable, setIsEditable)}>
             <Box sx={sessionDetailsNotesBox}>
-                <div>{ parsedNotes }</div>
+                { parsedNotes }
             </Box>
         </div>
     );

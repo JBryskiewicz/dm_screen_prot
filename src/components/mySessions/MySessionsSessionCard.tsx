@@ -3,11 +3,11 @@ import Typography from "@mui/material/Typography";
 import {Session} from "../../types/types";
 import Box from "@mui/material/Box";
 import axios from "axios";
-import {API_URL} from "../../utils/constants";
 import {Dispatch, SetStateAction} from "react";
 import {MySessionsCardItem, MySessionsDateStyles, MySessionsNameStyles, MySessionsNotesDemo} from "../../sx/mySessionsStyles";
 import {applyDate, applyDemoNotes} from "../../utils/supportFunctions";
 import parse from "html-react-parser";
+import {API_URL} from "../../utils/apiCommunication";
 import {Link} from "react-router-dom";
 
 type Props = {
@@ -18,15 +18,23 @@ type Props = {
 function MySessionsSessionCard({session, setCheck}: Props) {
 
     async function handleDeleteButton () {
+        console.log("HANDLE DELETE");
         await removeSession(session.id);
     }
 
     async function removeSession(id: number) {
+        console.log("REMOVE SESSION");
         await axios.delete(`${API_URL}/${id}`);
-        await setCheck(prevState => prevState === 0 ? 1 : 0);
+        await new Promise(resolve => {
+            console.log("CALLING SETCHECK");
+            setCheck(prevState => prevState === 0 ? 1 : 0);
+            setTimeout(() => {
+                resolve(null);
+            }, 1000);
+        });
     }
 
-    const parsedNotes = parse(applyDemoNotes(session.notes, 125));
+    const parsedNotes = parse(applyDemoNotes(session.notes, 80));
 
     return (
         <Grid item xs={4}>
@@ -46,9 +54,9 @@ function MySessionsSessionCard({session, setCheck}: Props) {
                             Created: {applyDate(session.creationDate)}
                         </Typography>
                     </Box>
-                    <Typography variant="body2" sx={MySessionsNotesDemo}>
-                        <div>{ parsedNotes }</div>
-                    </Typography>
+                    <div style={MySessionsNotesDemo}>
+                        { parsedNotes }
+                    </div>
                 </CardContent>
                 <CardActions sx={{display: 'flex', justifyContent: 'space-around'}}>
                     <Link to={`/session-details/${session.id}`}>

@@ -10,7 +10,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import {activeText, customPrimaryColor} from "../../utils/customColors";
+import {activeText, customPrimaryColor} from "../../sx/customColors";
 import {Search, SearchIconWrapper, StyledInputBase} from "./SearchBar";
 import {headerIconStyling} from "../../sx/headerStyles";
 import {Link} from "react-router-dom";

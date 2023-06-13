@@ -1,8 +1,8 @@
-import {activeText, inactiveText, secondaryActiveText} from "../../../utils/customColors";
+import {activeText, secondaryActiveText} from "../../../sx/customColors";
 import {Button, Card, CardActions, CardContent} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import {Session} from "../../../types/types";
-import {latestSessionCardStyles} from "../../../sx/mainScreenStyles";
+import {latestSessionCardStyles, latestSessionDemoNotes} from "../../../sx/mainScreenStyles";
 import {applyDate, applyDemoNotes} from "../../../utils/supportFunctions";
 import parse from 'html-react-parser';
 import {Link} from "react-router-dom";
@@ -13,7 +13,7 @@ type Props = {
 
 function SessionQuickAccessCard({session}: Props) {
 
-    const parsedNotes = parse(applyDemoNotes(session.notes, 100));
+    const parsedNotes = parse(applyDemoNotes(session.notes, 80));
 
     return (
         <Card sx={latestSessionCardStyles}>
@@ -32,12 +32,9 @@ function SessionQuickAccessCard({session}: Props) {
                         ? `Planned: ${applyDate(session.plannedDate)}`
                         : `Session is not planned`}
                 </Typography>
-                <Typography
-                    variant="body2"
-                    sx={{maxHeight: '80px', color: inactiveText, overflow: 'hidden'}}
-                >
-                    <div>{ parsedNotes }</div>
-                </Typography>
+                <div style={latestSessionDemoNotes}>
+                    { parsedNotes }
+                </div>
             </CardContent>
             <CardActions sx={{display: 'flex', justifyContent: 'space-around'}}>
                 <Link to={`/session-details/${session.id}`}>

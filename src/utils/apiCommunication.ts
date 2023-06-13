@@ -1,6 +1,7 @@
 import {NewSession, Session} from "../types/types";
 import axios from "axios";
-import {API_URL} from "./constants";
+
+export const API_URL = 'http://localhost:3000/sessions';
 
 export async function getSessions(): Promise<Session[]> {
     const response = await axios.get<Session[]>(API_URL);

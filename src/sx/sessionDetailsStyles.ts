@@ -1,4 +1,4 @@
-import {customTetraryColor, secondaryActiveText} from "../utils/customColors";
+import {customTetraryColor, secondaryActiveText} from "./customColors";
 
 export const sessionDetailsNameLabel = {
     width: '400px',

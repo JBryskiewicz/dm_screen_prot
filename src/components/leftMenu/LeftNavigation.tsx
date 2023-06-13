@@ -10,7 +10,7 @@ import {
     customPrimaryColor,
     customSecondaryColor,
     inactiveText
-} from "../../utils/customColors";
+} from "../../sx/customColors";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import {Link} from "react-router-dom";
 import {navigationAccordion, navigationBody} from "../../sx/leftNavigationStyles";
