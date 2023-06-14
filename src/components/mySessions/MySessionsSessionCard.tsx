@@ -4,11 +4,17 @@ import {Session} from "../../types/types";
 import Box from "@mui/material/Box";
 import axios from "axios";
 import {Dispatch, SetStateAction} from "react";
-import {MySessionsCardItem, MySessionsDateStyles, MySessionsNameStyles, MySessionsNotesDemo} from "../../sx/mySessionsStyles";
+import {
+    MySessionsCardItem,
+    MySessionsDateStyles,
+    MySessionsNameStyles,
+    MySessionsNotesDemo
+} from "../../sx/mySessionsStyles";
 import {applyDate, applyDemoNotes} from "../../utils/supportFunctions";
 import parse from "html-react-parser";
 import {API_URL} from "../../utils/apiCommunication";
 import {Link} from "react-router-dom";
+import {latestSessionActions} from "../../sx/mainScreenStyles";
 
 type Props = {
     session: Session
@@ -18,20 +24,12 @@ type Props = {
 function MySessionsSessionCard({session, setCheck}: Props) {
 
     async function handleDeleteButton () {
-        console.log("HANDLE DELETE");
         await removeSession(session.id);
     }
 
     async function removeSession(id: number) {
-        console.log("REMOVE SESSION");
         await axios.delete(`${API_URL}/${id}`);
-        await new Promise(resolve => {
-            console.log("CALLING SETCHECK");
-            setCheck(prevState => prevState === 0 ? 1 : 0);
-            setTimeout(() => {
-                resolve(null);
-            }, 1000);
-        });
+        await setCheck(prevState => prevState === 0 ? 1 : 0);
     }
 
     const parsedNotes = parse(applyDemoNotes(session.notes, 80));
@@ -58,7 +56,7 @@ function MySessionsSessionCard({session, setCheck}: Props) {
                         { parsedNotes }
                     </div>
                 </CardContent>
-                <CardActions sx={{display: 'flex', justifyContent: 'space-around'}}>
+                <CardActions sx={latestSessionActions}>
                     <Link to={`/session-details/${session.id}`}>
                         <Button size="small">View</Button>
                     </Link>

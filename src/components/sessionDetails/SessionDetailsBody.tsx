@@ -18,7 +18,7 @@ const initialSession: Session = {
     name: '',
     notes: '',
     creationDate: new Date(),
-    plannedDate: new Date()
+    plannedDate: null
 }
 
 function SessionDetailsBody() {

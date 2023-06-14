@@ -19,10 +19,18 @@ function Introduction() {
     return (
         <Box sx={mainBodyBoxStyle}>
             <Box sx={mainBodyFeaturesCard}>
-                <Typography variant={'h4'} color={activeText} sx={{fontWeight: 500}}>
+                <Typography
+                    variant={'h4'}
+                    color={activeText}
+                    sx={{fontWeight: 500}}
+                >
                     Welcome to "Dungeon Master Screen"
                 </Typography>
-                <Typography variant={'h6'} color={secondaryActiveText} sx={{marginTop: '20px'}}>
+                <Typography
+                    variant={'h6'}
+                    color={secondaryActiveText}
+                    sx={{marginTop: '20px'}}
+                >
                     checkout this app's features!
                 </Typography>
                 <Container sx={mainBodyFeaturesContainer}>

@@ -27,13 +27,25 @@ function MySessionsStatistics({sessions}: Props) {
                 {!sessions.length
                     ? <BasicLoader/>
                     : <CardContent>
-                        <Typography sx={mySessionsStatisticsTypography} color="text.secondary" gutterBottom>
+                        <Typography
+                            sx={mySessionsStatisticsTypography}
+                            color="text.secondary"
+                            gutterBottom
+                        >
                             Account: <span style={{color: '#b1b1b1'}}>{'John Doe'}</span>
                         </Typography>
-                        <Typography sx={mySessionsStatisticsTypography} color="text.secondary" gutterBottom>
+                        <Typography
+                            sx={mySessionsStatisticsTypography}
+                            color="text.secondary"
+                            gutterBottom
+                        >
                             Sessions: <span style={{color: '#b1b1b1'}}>{sessions.length}</span>
                         </Typography>
-                        <Typography sx={mySessionsStatisticsTypography} color="text.secondary" gutterBottom>
+                        <Typography
+                            sx={mySessionsStatisticsTypography}
+                            color="text.secondary"
+                            gutterBottom
+                        >
                             Last created: <span style={{color: '#b1b1b1'}}>{lastCreated}</span>
                         </Typography>
                     </CardContent>

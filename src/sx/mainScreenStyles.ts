@@ -71,6 +71,10 @@ export const latestSessionsTextField = {
     },
 }
 
+export const latestSessionsBox = {
+    marginTop: '10px'
+}
+
 export const latestSessionsFormStyles = {
     display: 'flex',
     columnGap: '8px',
@@ -116,8 +120,23 @@ export const latestSessionCardStyles = {
     marginBottom: '20px'
 }
 
+export const latestSessionName = {
+    fontSize: 16,
+    color: activeText
+}
+
+export const latestSessionDate = {
+    fontSize: 14,
+    color: secondaryActiveText
+}
+
 export const latestSessionDemoNotes = {
     maxHeight: '90px',
     color: inactiveText,
     overflow: 'hidden'
+}
+
+export const latestSessionActions = {
+    display: 'flex',
+    justifyContent: 'space-around'
 }

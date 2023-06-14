@@ -3,7 +3,12 @@ import Box from "@mui/material/Box";
 import {styled} from "@mui/material/styles";
 import {NewSession} from "../../../types/types";
 import {Dispatch, SetStateAction, useState} from "react";
-import {latestSessionsFormStyles, latestSessionsNewButton, latestSessionsTextField} from "../../../sx/mainScreenStyles";
+import {
+    latestSessionsBox,
+    latestSessionsFormStyles,
+    latestSessionsNewButton,
+    latestSessionsTextField
+} from "../../../sx/mainScreenStyles";
 import {postSession} from "../../../utils/apiCommunication";
 
 const CssTextField = styled(TextField)(latestSessionsTextField);
@@ -29,7 +34,7 @@ function SessionQuickAccessAdd({setCheck}: Props) {
     }
 
     return (
-        <Box sx={{marginTop: '10px'}}>
+        <Box sx={latestSessionsBox}>
             <form
                 onSubmit={handleSubmit}
                 style={latestSessionsFormStyles}

@@ -1,8 +1,13 @@
-import {activeText, secondaryActiveText} from "../../../sx/customColors";
 import {Button, Card, CardActions, CardContent} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import {Session} from "../../../types/types";
-import {latestSessionCardStyles, latestSessionDemoNotes} from "../../../sx/mainScreenStyles";
+import {
+    latestSessionActions,
+    latestSessionCardStyles,
+    latestSessionDate,
+    latestSessionDemoNotes,
+    latestSessionName
+} from "../../../sx/mainScreenStyles";
 import {applyDate, applyDemoNotes} from "../../../utils/supportFunctions";
 import parse from 'html-react-parser';
 import {Link} from "react-router-dom";
@@ -19,13 +24,13 @@ function SessionQuickAccessCard({session}: Props) {
         <Card sx={latestSessionCardStyles}>
             <CardContent>
                 <Typography
-                    sx={{fontSize: 16, color: activeText}}
+                    sx={latestSessionName}
                     gutterBottom
                 >
                     {session.name}
                 </Typography>
                 <Typography
-                    sx={{fontSize: 14, color: secondaryActiveText}}
+                    sx={latestSessionDate}
                     gutterBottom
                 >
                     {session.plannedDate !== null
@@ -36,7 +41,7 @@ function SessionQuickAccessCard({session}: Props) {
                     { parsedNotes }
                 </div>
             </CardContent>
-            <CardActions sx={{display: 'flex', justifyContent: 'space-around'}}>
+            <CardActions sx={latestSessionActions}>
                 <Link to={`/session-details/${session.id}`}>
                     <Button size="small">
                         Details

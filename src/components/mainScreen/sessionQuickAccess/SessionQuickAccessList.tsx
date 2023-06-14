@@ -14,10 +14,6 @@ function SessionQuickAccessList() {
 
     useEffect(() => {
         sortAndSetSessions(setSessions);
-    }, []);
-
-    useEffect(() => {
-        sortAndSetSessions(setSessions);
     }, [check]);
 
     return (
